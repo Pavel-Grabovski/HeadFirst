@@ -1,10 +1,12 @@
-﻿namespace HeadFirst
+﻿using HeadFirst.Strategy.Duck;
+
+namespace HeadFirst
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            MiniDuckSimulator.Start();
         }
     }
 }
