@@ -21,4 +21,14 @@ public abstract class Duck
     {
         Console.WriteLine("All ducks float, even decoys!");
     }
+
+    public void SetQuackBehavior(IQuackBehavior quackBehavior)
+    {
+        QuackBehavior = quackBehavior;
+    }
+
+    public void SetFlyBehavior(IFlyBehavior flyBehavior)
+    {
+        FlyBehavior = flyBehavior;
+    }
 }
