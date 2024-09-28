@@ -1,4 +1,4 @@
-﻿namespace HeadFirst.Strategy.Dick;
+﻿namespace HeadFirst.Strategy.Duck;
 
 public class Quack : IQuackBehavior
 {
