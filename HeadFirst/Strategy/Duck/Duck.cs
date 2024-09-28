@@ -2,16 +2,16 @@
 
 public abstract class Duck
 {
-    private readonly IQuackBehavior _quackBehavior;
-    private readonly IFlyBehavior _flyBehavior;
+    protected private IQuackBehavior QuackBehavior;
+    protected private IFlyBehavior FlyBehavior;
 
-    public void performQuack()
+    public void PerformQuack()
     {
-        _quackBehavior.Quack();
+        QuackBehavior.Quack();
     }
 
-    public void performFly()
+    public void PerformFly()
     {
-        _flyBehavior.Fly();
+        FlyBehavior.Fly();
     }
 }
