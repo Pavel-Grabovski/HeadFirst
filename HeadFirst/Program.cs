@@ -1,4 +1,5 @@
-﻿using HeadFirst.Strategy.Duck;
+﻿using HeadFirst.Observer;
+using HeadFirst.Strategy.Duck;
 
 namespace HeadFirst
 {
@@ -6,7 +7,7 @@ namespace HeadFirst
     {
         static void Main(string[] args)
         {
-            MiniDuckSimulator.Start();
+            WeatherStation.Start();
         }
     }
 }

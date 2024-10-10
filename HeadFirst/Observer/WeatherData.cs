@@ -24,11 +24,14 @@ public class WeatherData : ISubject
     public void RegisterObserver(IObserver observer)
     {
         _observers.Add(observer);
+        Console.WriteLine($"Register observer {observer}");
     }
 
     public void RemoveObserver(IObserver observer)
     {
         _observers.Remove(observer);
+        Console.WriteLine($"Remove observer {observer}");
+
     }
 
     public void MeasurementsChanged()
