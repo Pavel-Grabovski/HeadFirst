@@ -4,9 +4,9 @@ public class CurrentConditionsDisplay : IObserver, IDisplayElement
 {
     private float _temperature;
     private float _humidity;
-    private ISubject _weatherData;
+    private IObservable _weatherData;
 
-    public CurrentConditionsDisplay(ISubject weatherData)
+    public CurrentConditionsDisplay(IObservable weatherData)
     {
         _weatherData = weatherData;
         _weatherData.RegisterObserver(this);

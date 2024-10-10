@@ -1,6 +1,6 @@
 ﻿namespace HeadFirst.Observer;
 
-public interface ISubject
+public interface IObservable
 {
     public void RegisterObserver(IObserver observer);
     public void RemoveObserver(IObserver observer);

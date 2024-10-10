@@ -1,6 +1,6 @@
 ﻿namespace HeadFirst.Observer;
 
-public class WeatherData : ISubject
+public class WeatherData : IObservable
 {
     private readonly List<IObserver> _observers;
 

@@ -4,9 +4,9 @@ public class ForecastDisplay : IObserver, IDisplayElement
 {
     private float _temperature;
     private float _humidity;
-    private ISubject _weatherData;
+    private IObservable _weatherData;
 
-    public ForecastDisplay(ISubject weatherData)
+    public ForecastDisplay(IObservable weatherData)
     {
         _weatherData = weatherData;
         _weatherData.RegisterObserver(this);

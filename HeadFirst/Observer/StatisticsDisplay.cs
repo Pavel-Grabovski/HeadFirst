@@ -4,9 +4,9 @@ public class StatisticsDisplay : IObserver, IDisplayElement
 {
     private float _temperature;
     private float _humidity;
-    private ISubject _weatherData;
+    private IObservable _weatherData;
 
-    public StatisticsDisplay(ISubject weatherData)
+    public StatisticsDisplay(IObservable weatherData)
     {
         _weatherData = weatherData;
         _weatherData.RegisterObserver(this);
