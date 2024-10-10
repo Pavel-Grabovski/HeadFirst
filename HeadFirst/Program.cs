@@ -1,5 +1,4 @@
-﻿using HeadFirst.Observer;
-using HeadFirst.Strategy.Duck;
+﻿
 
 namespace HeadFirst
 {
@@ -7,7 +6,7 @@ namespace HeadFirst
     {
         static void Main(string[] args)
         {
-            WeatherStation.Start();
+            ObserverJavaVersion.WeatherStation.Start();
         }
     }
 }
