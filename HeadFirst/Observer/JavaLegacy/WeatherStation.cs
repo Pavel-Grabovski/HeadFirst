@@ -1,4 +1,4 @@
-﻿namespace HeadFirst.ObserverJavaVersion;
+﻿namespace HeadFirst.Observer.JavaLegacy;
 
 public static class WeatherStation
 {
@@ -15,7 +15,7 @@ public static class WeatherStation
         weatherData.SetMeasurements(82, 70, 29.2f);
         weatherData.SetMeasurements(78, 90, 29.2f);
 
-        
+
         weatherData.Remove(currentDisplay);
 
         weatherData.SetMeasurements(45, 67, 23.2f);

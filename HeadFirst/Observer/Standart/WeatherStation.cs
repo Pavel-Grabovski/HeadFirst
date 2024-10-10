@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HeadFirst.Observer;
+namespace HeadFirst.Observer.Standart;
 
 public static class WeatherStation
 {
@@ -21,7 +21,7 @@ public static class WeatherStation
         weatherData.SetMeasurements(82, 70, 29.2f);
         weatherData.SetMeasurements(78, 90, 29.2f);
 
-        
+
 
         weatherData.RemoveObserver(statisticsDisplay);
 

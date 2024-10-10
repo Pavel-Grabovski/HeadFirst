@@ -1,4 +1,4 @@
-﻿namespace HeadFirst.ObserverJavaVersion;
+﻿namespace HeadFirst.Observer.Standart;
 
 public interface IDisplayElement
 {

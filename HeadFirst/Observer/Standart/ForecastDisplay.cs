@@ -1,12 +1,12 @@
-﻿namespace HeadFirst.Observer;
+﻿namespace HeadFirst.Observer.Standart;
 
-public class CurrentConditionsDisplay : IObserver, IDisplayElement
+public class ForecastDisplay : IObserver, IDisplayElement
 {
     private float _temperature;
     private float _humidity;
     private IObservable _weatherData;
 
-    public CurrentConditionsDisplay(IObservable weatherData)
+    public ForecastDisplay(IObservable weatherData)
     {
         _weatherData = weatherData;
         _weatherData.RegisterObserver(this);
@@ -14,7 +14,7 @@ public class CurrentConditionsDisplay : IObserver, IDisplayElement
 
     public void Display()
     {
-        Console.WriteLine($"Current conditions: {_temperature}°, F degrees and {_humidity} % humidity");
+        Console.WriteLine($"Forecast display: {_temperature}°, F degrees and {_humidity} % humidity");
     }
 
     public void Update(float temp, float humidity, float pressure)

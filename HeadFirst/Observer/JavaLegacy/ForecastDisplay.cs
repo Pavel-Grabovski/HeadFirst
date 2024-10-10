@@ -1,4 +1,4 @@
-﻿namespace HeadFirst.ObserverJavaVersion;
+﻿namespace HeadFirst.Observer.JavaLegacy;
 
 public class ForecastDisplay : IObserver, IDisplayElement
 {

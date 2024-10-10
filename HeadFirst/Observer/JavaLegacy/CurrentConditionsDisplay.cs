@@ -1,4 +1,4 @@
-﻿namespace HeadFirst.ObserverJavaVersion;
+﻿namespace HeadFirst.Observer.JavaLegacy;
 
 public class CurrentConditionsDisplay : IObserver, IDisplayElement
 {
@@ -28,7 +28,7 @@ public class CurrentConditionsDisplay : IObserver, IDisplayElement
 
     public void Update(Observable observable, object? arg)
     {
-        if(observable is WeatherData weatherData)
+        if (observable is WeatherData weatherData)
         {
             _temperature = weatherData.GetTemperature();
             _humidity = weatherData.GetHumidity();

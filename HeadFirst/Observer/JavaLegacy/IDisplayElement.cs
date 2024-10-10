@@ -1,4 +1,4 @@
-﻿namespace HeadFirst.Observer;
+﻿namespace HeadFirst.Observer.JavaLegacy;
 
 public interface IDisplayElement
 {

@@ -1,4 +1,4 @@
-﻿namespace HeadFirst.Observer;
+﻿namespace HeadFirst.Observer.Standart;
 
 public class WeatherData : IObservable
 {
@@ -15,7 +15,7 @@ public class WeatherData : IObservable
 
     public void NotifyObservers()
     {
-        foreach(IObserver observer in _observers)
+        foreach (IObserver observer in _observers)
         {
             observer.Update(_temperature, _humidity, _pressure);
         }
