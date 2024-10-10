@@ -15,7 +15,7 @@ public class Observable
         _observers.Remove(observer);
     }
 
-    public void Notify(object arg)
+    public void Notify(object? arg = null)
     {
         if (_isChanged)
         {

@@ -1,4 +1,4 @@
-﻿namespace HeadFirst.ObserverJavaVersion
+﻿namespace HeadFirst.ObserverJavaVersion;
 
 public class WeatherData : Observable
 {
@@ -10,7 +10,7 @@ public class WeatherData : Observable
     public void MeasurementsChanged()
     {
         SetChanged();
-        Notify(null);
+        Notify();
     }
 
     public void SetMeasurements(float temperature, float humidity, float pressure)
@@ -20,4 +20,10 @@ public class WeatherData : Observable
         _pressure = pressure;
         MeasurementsChanged();
     }
+
+    public float GetTemperature() => _temperature;
+
+    public float GetHumidity() => _humidity;
+
+    public float GetPressure() => _pressure;
 }
