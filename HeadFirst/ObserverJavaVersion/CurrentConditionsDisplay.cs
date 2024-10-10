@@ -1,6 +1,6 @@
 ﻿namespace HeadFirst.ObserverJavaVersion;
 
-public class CurrentConditionsDisplay : IObserver, Observer.IDisplayElement
+public class CurrentConditionsDisplay : IObserver, IDisplayElement
 {
     Observable _observable;
 
