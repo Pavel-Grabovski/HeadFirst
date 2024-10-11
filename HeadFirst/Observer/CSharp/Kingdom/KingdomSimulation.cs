@@ -71,16 +71,17 @@ public static class KingdomSimulation
         tsar_2.IssueDecree(order_3);
         tsar_3.IssueDecree(order_4);
 
-
-        guard_4.Unsubscribe();
-
-        tsar_2.IssueDecree(order_3);
-        tsar_3.IssueDecree(order_4);
-
-        guard_4.Unsubscribe();
+        guard_4.Unsubscribe(tsar_2);
 
 
         tsar_2.IssueDecree(order_3);
         tsar_3.IssueDecree(order_4);
+
+        guard_4.Unsubscribe(tsar_3);
+
+        tsar_2.IssueDecree(order_3);
+        tsar_3.IssueDecree(order_4);
+
+
     }
 }

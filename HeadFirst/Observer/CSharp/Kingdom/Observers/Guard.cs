@@ -2,7 +2,8 @@
 
 public class Guard : IObserver<Order>
 {
-    private IDisposable? unsubscriber;
+    private readonly List<IObservable<Order>> observables= new ();
+    //private IDisposable? unsubscriber;
 
     private readonly string _name;
 
@@ -14,7 +15,7 @@ public class Guard : IObserver<Order>
 
     public void OnCompleted()
     {
-        this.Unsubscribe();
+        //this.Unsubscribe();
     }
 
     public virtual void OnError(Exception error)
@@ -27,19 +28,24 @@ public class Guard : IObserver<Order>
         Console.WriteLine($"{this} получил приказ <<{order.Message}>> от {order.Signature}");
     }
 
-    public virtual void Unsubscribe()
+    public virtual void Unsubscribe(IObservable<Order> observable)
     {
-        Console.WriteLine($"{this} отрекся от службы");
+        Console.WriteLine($"{this} отрекся от службы от {observable}");
 
-        unsubscriber?.Dispose();
+        if (observables.Contains(observable))
+        {
+            observables.Remove(observable);
+        }
+        //unsubscriber?.Dispose();
     }
 
-    public virtual void Subscribe(IObservable<Order> overlord)
+    public virtual void Subscribe(IObservable<Order> observable)
     {
-        if (overlord != null)
+        if (observable != null)
         {
-            Console.WriteLine($"{nameof(Guard)} {_name} присягнул царю {overlord}(y)");
-            unsubscriber = overlord.Subscribe(this);
+            Console.WriteLine($"{nameof(Guard)} {_name} присягнул царю {observable}(y)");
+            observable.Subscribe(this);
+            observables.Add(observable);
         }
     }
 
