@@ -9,26 +9,28 @@ public class Guard : IObserver<Order>
     public Guard(string name)
     {
         _name = name;
+        Console.WriteLine($"{_name} решил стать стражником!");
     }
 
     public void OnCompleted()
     {
-        Console.WriteLine("Царь умер или отрекся от престола");
         this.Unsubscribe();
     }
 
     public virtual void OnError(Exception error)
     {
-        Console.WriteLine(error.ToString());
+        Console.WriteLine($"{this} получил ошибку <<{error.Message}>>");
     }
 
     public virtual void OnNext(Order order)
     {
-        Console.WriteLine(order.Message);
+        Console.WriteLine($"{this} получил приказ от  <<{order.Message}>>");
     }
 
     public virtual void Unsubscribe()
     {
+        Console.WriteLine($"{this} отрекся от службы");
+
         unsubscriber?.Dispose();
     }
 
@@ -36,9 +38,8 @@ public class Guard : IObserver<Order>
     {
         if (overlord != null)
         {
+            Console.WriteLine($"{nameof(Guard)} {_name} присягнул царю {overlord}(y)");
             unsubscriber = overlord.Subscribe(this);
-
-            Console.WriteLine($"{nameof(Guard)} {_name} присягнул {overlord}(y)");
         }
     }
 

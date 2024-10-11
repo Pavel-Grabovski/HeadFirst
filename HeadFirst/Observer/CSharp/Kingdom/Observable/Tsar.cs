@@ -9,6 +9,7 @@ public class Tsar : IObservable<Order>
     public Tsar(string name)
     {
         _name = name;
+        Console.WriteLine($"Царь {_name} помазан на царство");
     }
 
     public IDisposable Subscribe(IObserver<Order> observer)
@@ -43,6 +44,12 @@ public class Tsar : IObservable<Order>
 
     public void IssueDecree(Order order)
     {
+        if(order is null)
+        {
+            Console.WriteLine("Order is null");
+            return;
+        }
+        
         foreach(IObserver<Order> observer in observers)
         {
             if (string.IsNullOrEmpty(order.Message))
@@ -54,11 +61,12 @@ public class Tsar : IObservable<Order>
 
     public void Abdication()
     {
-        foreach (var observer in observers)
+        Console.WriteLine($"Царь {_name} отрекается");
+        foreach (var observer in observers.ToArray())
             if (observers.Contains(observer))
                 observer.OnCompleted();
 
-        observers.Clear();
+        //observers.Clear();
     }
     public override string ToString()
     {
