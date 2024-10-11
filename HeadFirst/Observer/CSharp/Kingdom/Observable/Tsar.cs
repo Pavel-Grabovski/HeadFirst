@@ -2,12 +2,22 @@
 
 public class Tsar : IObservable<Order>
 {
+    private readonly string _name;
+
     private readonly List<IObserver<Order>> observers = new();
+
+    public Tsar(string name)
+    {
+        _name = name;
+    }
 
     public IDisposable Subscribe(IObserver<Order> observer)
     {
         if (!observers.Contains(observer))
+        {
             observers.Add(observer);
+            Console.WriteLine($"{_name} принял присягу у {observer}");
+        }
 
         return new Unsubscriber(observers, observer);
     }
@@ -50,5 +60,10 @@ public class Tsar : IObservable<Order>
 
         observers.Clear();
     }
+    public override string ToString()
+    {
+        return $"{nameof(Tsar)}: {_name}";
+    }
+
 }
 
