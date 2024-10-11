@@ -24,7 +24,7 @@ public class Guard : IObserver<Order>
 
     public virtual void OnNext(Order order)
     {
-        Console.WriteLine($"{this} получил приказ от  <<{order.Message}>>");
+        Console.WriteLine($"{this} получил приказ <<{order.Message}>> от {order.Signature}");
     }
 
     public virtual void Unsubscribe()

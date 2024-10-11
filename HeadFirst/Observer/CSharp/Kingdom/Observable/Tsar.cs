@@ -6,6 +6,11 @@ public class Tsar : IObservable<Order>
 
     private readonly List<IObserver<Order>> observers = new();
 
+    public string Name 
+    { 
+        get => _name;
+    }
+
     public Tsar(string name)
     {
         _name = name;

@@ -9,4 +9,5 @@ namespace HeadFirst.Observer.CSharp.Kingdom;
 public class Order
 {
     public string Message { get; set; }
+    public string Signature { get; set; }
 }
