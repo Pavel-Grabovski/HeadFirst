@@ -2,8 +2,8 @@
 
 public class Guard : IObserver<Order>
 {
-    private readonly List<IObservable<Order>> observables= new ();
-    //private IDisposable? unsubscriber;
+    //private readonly List<IObservable<Order>> observables= new ();
+    private IDisposable? unsubscriber;
 
     private readonly string _name;
 
@@ -15,7 +15,7 @@ public class Guard : IObserver<Order>
 
     public void OnCompleted()
     {
-        //this.Unsubscribe();
+        this.Unsubscribe();
     }
 
     public virtual void OnError(Exception error)
@@ -28,25 +28,29 @@ public class Guard : IObserver<Order>
         Console.WriteLine($"{this} получил приказ <<{order.Message}>> от {order.Signature}");
     }
 
-    public virtual void Unsubscribe(IObservable<Order> observable)
+    //TODO пока не выходит сделать список подписок "по красоте" сделаю позжде
+    //public virtual void Unsubscribe(IObservable<Order> observable)
+    public virtual void Unsubscribe()
     {
-        Console.WriteLine($"{this} отрекся от службы от {observable}");
+        //Console.WriteLine($"{this} отрекся от службы от {observable}");
 
-        if (observables.Contains(observable))
-        {
-            observables.Remove(observable);
-        }
-        //unsubscriber?.Dispose();
+        //if (observables.Contains(observable))
+        //{
+        //    observables.Remove(observable);
+        //}
+        unsubscriber?.Dispose();
     }
 
     public virtual void Subscribe(IObservable<Order> observable)
     {
-        if (observable != null)
-        {
-            Console.WriteLine($"{nameof(Guard)} {_name} присягнул царю {observable}(y)");
-            observable.Subscribe(this);
-            observables.Add(observable);
-        }
+        observable.Subscribe(this);
+
+        //if (observable != null)
+        //{
+        //    Console.WriteLine($"{nameof(Guard)} {_name} присягнул царю {observable}(y)");
+        //    observable.Subscribe(this);
+        //    observables.Add(observable);
+        //}
     }
 
     public override string ToString()
