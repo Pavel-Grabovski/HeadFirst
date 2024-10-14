@@ -1,4 +1,5 @@
-﻿using HeadFirst.Observer.CSharp.Kingdom;
+﻿using HeadFirst.Decorator;
+using HeadFirst.Observer.CSharp.Kingdom;
 using HeadFirst.Observer.CSharp.Kingdom.Observable;
 using HeadFirst.Observer.CSharp.Kingdom.Observers;
 using System.Text;
@@ -13,7 +14,9 @@ internal class Program
 
         //WeatherStation.Start();
 
-        KingdomSimulation.Start();
+        //KingdomSimulation.Start();
+
+        DecoratorSimulation.Start();
 
     }
 }
