@@ -14,5 +14,5 @@ public abstract class Beverage
         _size = size;
     }
 
-    public BeverageSizeEnum SetSize() => _size;
+    public BeverageSizeEnum GetSize() => _size;
 }

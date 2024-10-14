@@ -2,8 +2,6 @@
 
 public class Soy : CondimentDecorator
 {
-    private decimal _cost = 0.15m;
-
     public Soy(Beverage beverage)
     {
         Beverage = beverage;
@@ -12,7 +10,22 @@ public class Soy : CondimentDecorator
 
     public override decimal Cost()
     {
-        return Beverage.Cost() + _cost;
+        decimal beverageCost = Beverage.Cost();
+
+        if (Beverage.GetSize() == BeverageSizeEnum.Small)
+        {
+            beverageCost += beverageCost + 0.10m;
+        }
+        else if (Beverage.GetSize() == BeverageSizeEnum.Medium)
+        {
+            beverageCost += beverageCost + 0.15m;
+        }
+        else if (Beverage.GetSize() == BeverageSizeEnum.Large)
+        {
+            beverageCost += beverageCost + 0.20m;
+        }
+
+        return beverageCost;
     }
 
     public override string GetDescription()
