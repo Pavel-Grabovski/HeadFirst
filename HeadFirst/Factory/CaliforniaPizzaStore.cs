@@ -2,27 +2,27 @@
 
 namespace HeadFirst.Factory;
 
-public class SimplePizzaFactory
+public class CaliforniaPizzaStore : PizzaStore
 {
-    public Pizza CreatePizza(PizzaTypeEnum type)
+    public override Pizza CreatePizza(PizzaTypeEnum type)
     {
         Pizza pizza;
 
         if (type == PizzaTypeEnum.Cheese)
         {
-            pizza = new CheesePizza();
+            pizza = new CaliforniaStyleCheesePizza();
         }
         else if (type == PizzaTypeEnum.Pepperoni)
         {
-            pizza = new PepperoniPizza();
+            pizza = new CaliforniaStylePepperoniPizza();
         }
         else if (type == PizzaTypeEnum.Clam)
         {
-            pizza = new ClamPizza();
+            pizza = new CaliforniaStyleClamPizza();
         }
         else if (type == PizzaTypeEnum.Veggie)
         {
-            pizza = new VeggiePizza();
+            pizza = new CaliforniaStyleVeggiePizza();
         }
         else
         {

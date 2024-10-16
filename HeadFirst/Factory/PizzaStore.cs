@@ -1,19 +1,14 @@
-﻿namespace HeadFirst.Factory;
+﻿using HeadFirst.Factory.Pizzas;
 
-public class PizzaStore
+namespace HeadFirst.Factory;
+
+public abstract class PizzaStore
 {
-    SimplePizzaFactory _factory;
-
-    public PizzaStore(SimplePizzaFactory factory)
-    {
-        _factory = factory;
-    }
-
-    public Pizza OrderPizza(PizzaTypeEnum type)
+    public virtual Pizza OrderPizza(PizzaTypeEnum type)
     {
         Pizza pizza;
 
-        pizza = _factory.CreatePizza(type);
+        pizza = CreatePizza(type);
 
         pizza.Prepare();
         pizza.Bake();
@@ -21,4 +16,6 @@ public class PizzaStore
         pizza.Box();
         return pizza;
     }
+
+    public abstract Pizza CreatePizza(PizzaTypeEnum type);
 }
