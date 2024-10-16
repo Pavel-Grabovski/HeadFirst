@@ -1,4 +1,4 @@
-﻿namespace HeadFirst.Factory;
+﻿namespace HeadFirst.Factory.Pizzas;
 
 public class VeggiePizza : Pizza
 {
