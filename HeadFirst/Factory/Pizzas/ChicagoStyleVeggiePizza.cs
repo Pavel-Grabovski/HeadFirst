@@ -1,25 +1,24 @@
-﻿namespace HeadFirst.Factory.Pizzas
+﻿namespace HeadFirst.Factory.Pizzas;
+
+public class ChicagoStyleVeggiePizza : Pizza
 {
-    internal class ChicagoStyleVeggiePizza : Pizza
+    public override void Bake()
     {
-        public override void Bake()
-        {
-            throw new NotImplementedException();
-        }
+        Console.WriteLine("Bake veggie pizza in Chicago style");
+    }
 
-        public override void Box()
-        {
-            throw new NotImplementedException();
-        }
+    public override void Box()
+    {
+        Console.WriteLine("Box veggie pizza in Chicago style");
+    }
 
-        public override void Cut()
-        {
-            throw new NotImplementedException();
-        }
+    public override void Cut()
+    {
+        Console.WriteLine("Cut veggie pizza in Chicago style");
+    }
 
-        public override void Prepare()
-        {
-            throw new NotImplementedException();
-        }
+    public override void Prepare()
+    {
+        Console.WriteLine("Prepare veggie pizza in Chicago style");
     }
 }

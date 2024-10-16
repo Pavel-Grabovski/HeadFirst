@@ -4,21 +4,21 @@ public class NYStyleVeggiePizza : Pizza
 {
     public override void Bake()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Bake veggie pizza in NY style");
     }
 
     public override void Box()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Box veggie pizza in NY style");
     }
 
     public override void Cut()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Cut veggie pizza in NY style");
     }
 
     public override void Prepare()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Prepare veggie pizza in NY style");
     }
 }
