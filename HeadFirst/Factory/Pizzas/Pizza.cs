@@ -10,6 +10,14 @@ public abstract class Pizza
 
     public Sauce Sauce { get; set; }
 
+    public Vegetable[] Veggies { get; set; }
+
+    public Cheese Cheese;
+
+    public Pepperoni Pepperoni;
+
+    public Clams clam;
+
     public List<string> toppings { get; set; } = new List<string>();
 
     public abstract void Prepare();
