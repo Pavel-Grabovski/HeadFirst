@@ -2,6 +2,13 @@
 
 public class ChicagoStylePepperoniPizza : Pizza
 {
+    private readonly IPizzaIngredientFactory _ingredientFactory;
+
+    public ChicagoStylePepperoniPizza(IPizzaIngredientFactory ingredientFactory)
+    {
+        _ingredientFactory = ingredientFactory;
+    }
+
     public override void Bake()
     {
         Console.WriteLine("Bake pepperoni pizza in Chicago style");
@@ -19,6 +26,9 @@ public class ChicagoStylePepperoniPizza : Pizza
 
     public override void Prepare()
     {
-        Console.WriteLine("Prepare pepperoni pizza in Chicago style");
+        Console.WriteLine($"Preparing {Name}");
+        Dough = _ingredientFactory.CreateDough();
+        Sauce = _ingredientFactory.CreateSauce();
+        Cheese = _ingredientFactory.CreateCheese();
     }
 }

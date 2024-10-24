@@ -2,6 +2,13 @@
 
 public class NYStyleClamPizza : Pizza
 {
+    private readonly IPizzaIngredientFactory _ingredientFactory;
+
+    public NYStyleClamPizza(IPizzaIngredientFactory ingredientFactory)
+    {
+        _ingredientFactory = ingredientFactory;
+    }
+
     public override void Bake()
     {
         Console.WriteLine("Bake clam pizza in NY style");
@@ -19,6 +26,9 @@ public class NYStyleClamPizza : Pizza
 
     public override void Prepare()
     {
-        Console.WriteLine("Prepare clam pizza in NY style");
+        Console.WriteLine($"Preparing {Name}");
+        Dough = _ingredientFactory.CreateDough();
+        Sauce = _ingredientFactory.CreateSauce();
+        Cheese = _ingredientFactory.CreateCheese();
     }
 }

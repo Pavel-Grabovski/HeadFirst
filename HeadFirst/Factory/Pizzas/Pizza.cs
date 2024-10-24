@@ -27,4 +27,11 @@ public abstract class Pizza
     public abstract void Cut();
 
     public abstract void Box();
-}
+
+    public string GetName() => Name;
+
+    public void SetName(string name)
+    {
+        Name = name;
+    }
+}   
