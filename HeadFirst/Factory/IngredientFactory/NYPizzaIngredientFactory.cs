@@ -4,13 +4,13 @@ using HeadFirst.Factory.Ingredients.Dough;
 using HeadFirst.Factory.Ingredients.Pepperoni;
 using HeadFirst.Factory.Ingredients.Sauce;
 using HeadFirst.Factory.Ingredients.Veggies;
-namespace HeadFirst.Factory;
+namespace HeadFirst.Factory.IngredientFactory;
 
 public class NYPizzaIngredientFactory : IPizzaIngredientFactory
 {
     public ICheese CreateCheese()
     {
-         return new ReggianoCheese();
+        return new ReggianoCheese();
     }
 
     public IClam CreateClam()

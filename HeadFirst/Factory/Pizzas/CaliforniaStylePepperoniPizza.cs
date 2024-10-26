@@ -1,4 +1,6 @@
-﻿namespace HeadFirst.Factory.Pizzas;
+﻿using HeadFirst.Factory.IngredientFactory;
+
+namespace HeadFirst.Factory.Pizzas;
 
 public class CaliforniaStylePepperoniPizza : Pizza
 {

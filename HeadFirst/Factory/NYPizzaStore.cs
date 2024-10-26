@@ -1,4 +1,5 @@
-﻿using HeadFirst.Factory.Pizzas;
+﻿using HeadFirst.Factory.IngredientFactory;
+using HeadFirst.Factory.Pizzas;
 
 namespace HeadFirst.Factory;
 
