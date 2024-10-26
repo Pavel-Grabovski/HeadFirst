@@ -2,6 +2,7 @@
 using HeadFirst.Factory.Ingredients.Cheese;
 using HeadFirst.Factory.Ingredients.Clams;
 using HeadFirst.Factory.Ingredients.Dough;
+using HeadFirst.Factory.Ingredients.Pepperoni;
 using HeadFirst.Factory.Ingredients.Sauce;
 namespace HeadFirst.Factory;
 
