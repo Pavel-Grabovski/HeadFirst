@@ -3,7 +3,7 @@ namespace HeadFirst.Factory;
 
 public class NYPizzaIngredientFactory : IPizzaIngredientFactory
 {
-    public Cheese CreateCheese()
+    public ICheese CreateCheese()
     {
         throw new NotImplementedException();
     }

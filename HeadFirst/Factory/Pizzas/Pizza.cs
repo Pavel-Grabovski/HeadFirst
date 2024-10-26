@@ -12,7 +12,7 @@ public abstract class Pizza
 
     public IVegetable[] Veggies { get; set; }
 
-    public Cheese Cheese;
+    public ICheese Cheese;
 
     public IPepperoni Pepperoni;
 
