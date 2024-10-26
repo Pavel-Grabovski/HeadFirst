@@ -1,7 +1,7 @@
 ﻿using HeadFirst.Factory.IngredientFactory;
 using HeadFirst.Factory.Pizzas;
 
-namespace HeadFirst.Factory;
+namespace HeadFirst.Factory.PizzaStore;
 
 public class NYPizzaStore : PizzaStore
 {

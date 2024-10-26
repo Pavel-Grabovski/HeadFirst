@@ -1,8 +1,8 @@
 ﻿using HeadFirst.Factory.Pizzas;
 
-namespace HeadFirst.Factory;
+namespace HeadFirst.Factory.PizzaStore;
 
-public class CaliforniaPizzaStore : PizzaStore
+public class ChicagoPizzaStore : PizzaStore
 {
     public override Pizza CreatePizza(PizzaTypeEnum type)
     {
@@ -10,19 +10,19 @@ public class CaliforniaPizzaStore : PizzaStore
 
         if (type == PizzaTypeEnum.Cheese)
         {
-            pizza = new CaliforniaStyleCheesePizza();
+            pizza = new ChicagoStyleCheesePizza();
         }
         else if (type == PizzaTypeEnum.Pepperoni)
         {
-            pizza = new CaliforniaStylePepperoniPizza();
+            pizza = new ChicagoStylePepperoniPizza();
         }
         else if (type == PizzaTypeEnum.Clam)
         {
-            pizza = new CaliforniaStyleClamPizza();
+            pizza = new ChicagoStyleClamPizza();
         }
         else if (type == PizzaTypeEnum.Veggie)
         {
-            pizza = new CaliforniaStyleVeggiePizza();
+            pizza = new ChicagoStyleVeggiePizza();
         }
         else
         {
