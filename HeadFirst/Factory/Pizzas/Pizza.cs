@@ -14,7 +14,7 @@ public abstract class Pizza
 
     public Cheese Cheese;
 
-    public Pepperoni Pepperoni;
+    public IPepperoni Pepperoni;
 
     public IClams Clam;
 

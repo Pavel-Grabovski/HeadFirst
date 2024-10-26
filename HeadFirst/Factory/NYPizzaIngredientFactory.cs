@@ -18,7 +18,7 @@ public class NYPizzaIngredientFactory : IPizzaIngredientFactory
         throw new NotImplementedException();
     }
 
-    public Pepperoni CreatePepperoni()
+    public IPepperoni CreatePepperoni()
     {
         throw new NotImplementedException();
     }
