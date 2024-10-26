@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace HeadFirst.Factory.Ingredients;
 
-public class Dough
+public interface IDough
 {
 }

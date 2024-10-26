@@ -3,7 +3,7 @@ namespace HeadFirst.Factory;
 
 public interface IPizzaIngredientFactory
 {
-    public Dough CreateDough();
+    public IDough CreateDough();
     public Sauce CreateSauce();
     public Cheese CreateCheese();
     public Vegetable[] CreateVeggies();

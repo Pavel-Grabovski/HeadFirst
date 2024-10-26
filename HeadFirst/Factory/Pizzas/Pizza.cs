@@ -6,7 +6,7 @@ public abstract class Pizza
 {
     public string Name { get; set; }
     
-    public Dough Dough { get; set; }
+    public IDough Dough { get; set; }
 
     public Sauce Sauce { get; set; }
 

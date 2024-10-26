@@ -13,7 +13,7 @@ public class NYPizzaIngredientFactory : IPizzaIngredientFactory
         throw new NotImplementedException();
     }
 
-    public Dough CreateDough()
+    public IDough CreateDough()
     {
         throw new NotImplementedException();
     }
