@@ -23,7 +23,7 @@ public class NYPizzaIngredientFactory : IPizzaIngredientFactory
         throw new NotImplementedException();
     }
 
-    public Sauce CreateSauce()
+    public ISauce CreateSauce()
     {
         throw new NotImplementedException();
     }
