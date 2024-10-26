@@ -1,5 +1,6 @@
 ﻿using HeadFirst.Factory.Ingredients;
 using HeadFirst.Factory.Ingredients.Clams;
+using HeadFirst.Factory.Ingredients.Sauce;
 namespace HeadFirst.Factory;
 
 public interface IPizzaIngredientFactory
