@@ -27,11 +27,20 @@ public abstract class Pizza
 
     public abstract void Prepare();
 
-    public abstract void Bake();
+    public virtual void Bake()
+    {
+        Console.WriteLine("Bake for 25 minutes at 350");
+    }
 
-    public abstract void Cut();
+    public virtual void Cut()
+    {
+        Console.WriteLine("Cutting the pizza into diagonal slices");
+    }
 
-    public abstract void Box();
+    public virtual void Box()
+    {
+        Console.WriteLine("Place pizza in official PizzaStore box");
+    }
 
     public string GetName() => Name;
 
