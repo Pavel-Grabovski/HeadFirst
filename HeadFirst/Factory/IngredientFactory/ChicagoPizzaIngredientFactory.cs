@@ -6,16 +6,16 @@ using HeadFirst.Factory.Ingredients.Sauce;
 using HeadFirst.Factory.Ingredients.Veggies;
 namespace HeadFirst.Factory.IngredientFactory;
 
-public class NYPizzaIngredientFactory : IPizzaIngredientFactory
+public class ChicagoPizzaIngredientFactory : IPizzaIngredientFactory
 {
     public ICheese CreateCheese()
     {
-        return new ReggianoCheese();
+        return new MozzarellaCheese();
     }
 
     public IClam CreateClam()
     {
-        return new FreshClam();
+        return new FrozenClam();
     }
 
     public IDough CreateDough()
@@ -30,17 +30,16 @@ public class NYPizzaIngredientFactory : IPizzaIngredientFactory
 
     public ISauce CreateSauce()
     {
-        return new MarinaraSauce();
+        return new PlumTomatoSauce();
     }
 
     public IVegetable[] CreateVeggies()
     {
         return new IVegetable[]
         {
-            new Garlic(),
-            new Onion(),
-            new Mushroom(),
-            new RedPeppers()
+            new Spinach(),
+            new BlackOlives(),
+            new EggPlant()
         };
     }
 }
