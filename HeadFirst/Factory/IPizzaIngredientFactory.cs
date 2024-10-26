@@ -6,7 +6,7 @@ public interface IPizzaIngredientFactory
     public IDough CreateDough();
     public ISauce CreateSauce();
     public Cheese CreateCheese();
-    public Vegetable[] CreateVeggies();
+    public IVegetable[] CreateVeggies();
     public IPepperoni CreatePepperoni();
     public IClams CreateClam();
 }

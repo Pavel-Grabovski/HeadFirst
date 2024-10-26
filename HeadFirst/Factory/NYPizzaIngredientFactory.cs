@@ -28,7 +28,7 @@ public class NYPizzaIngredientFactory : IPizzaIngredientFactory
         throw new NotImplementedException();
     }
 
-    public Vegetable[] CreateVeggies()
+    public IVegetable[] CreateVeggies()
     {
         throw new NotImplementedException();
     }

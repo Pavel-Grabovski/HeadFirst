@@ -10,7 +10,7 @@ public abstract class Pizza
 
     public ISauce Sauce { get; set; }
 
-    public Vegetable[] Veggies { get; set; }
+    public IVegetable[] Veggies { get; set; }
 
     public Cheese Cheese;
 
