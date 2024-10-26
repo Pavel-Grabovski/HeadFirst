@@ -4,4 +4,3 @@ public abstract class Vegetable : IVegetable
 {
     public string Name { get; set; }
 }
-
