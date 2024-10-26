@@ -1,7 +1,7 @@
 ﻿using HeadFirst.Factory.IngredientFactory;
 using HeadFirst.Factory.Pizzas;
 
-namespace HeadFirst.Factory.PizzaStore;
+namespace HeadFirst.Factory.PizzaStores;
 
 public class ChicagoPizzaStore : PizzaStore
 {
@@ -9,6 +9,7 @@ public class ChicagoPizzaStore : PizzaStore
     {
         Pizza pizza;
         IPizzaIngredientFactory _ingredientFactory = new ChicagoPizzaIngredientFactory();
+
         if (type == PizzaTypeEnum.Cheese)
         {
             pizza = new ChicagoStyleCheesePizza(_ingredientFactory);

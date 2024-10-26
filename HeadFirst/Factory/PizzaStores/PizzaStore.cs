@@ -1,6 +1,6 @@
 ﻿using HeadFirst.Factory.Pizzas;
 
-namespace HeadFirst.Factory;
+namespace HeadFirst.Factory.PizzaStores;
 
 public abstract class PizzaStore
 {
