@@ -8,7 +8,7 @@ public class NYPizzaIngredientFactory : IPizzaIngredientFactory
         throw new NotImplementedException();
     }
 
-    public Clams CreateClam()
+    public IClams CreateClam()
     {
         throw new NotImplementedException();
     }

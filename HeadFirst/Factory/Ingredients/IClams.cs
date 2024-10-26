@@ -1,5 +1,5 @@
 ﻿namespace HeadFirst.Factory.Ingredients;
 
-public class Clams
+public interface IClams
 {
 }

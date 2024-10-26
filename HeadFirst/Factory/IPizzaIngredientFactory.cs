@@ -8,5 +8,5 @@ public interface IPizzaIngredientFactory
     public Cheese CreateCheese();
     public Vegetable[] CreateVeggies();
     public Pepperoni CreatePepperoni();
-    public Clams CreateClam();
+    public IClams CreateClam();
 }

@@ -16,7 +16,7 @@ public abstract class Pizza
 
     public Pepperoni Pepperoni;
 
-    public Clams Clam;
+    public IClams Clam;
 
     public List<string> toppings { get; set; } = new List<string>();
 
