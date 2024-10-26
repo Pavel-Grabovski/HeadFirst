@@ -1,4 +1,5 @@
 ﻿using HeadFirst.Factory.Ingredients;
+using HeadFirst.Factory.Ingredients.Clams;
 
 namespace HeadFirst.Factory.Pizzas;
 
@@ -16,7 +17,7 @@ public abstract class Pizza
 
     public IPepperoni Pepperoni;
 
-    public IClams Clam;
+    public IClam Clam;
 
     public List<string> toppings { get; set; } = new List<string>();
 

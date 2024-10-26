@@ -1,4 +1,5 @@
 ﻿using HeadFirst.Factory.Ingredients;
+using HeadFirst.Factory.Ingredients.Clams;
 namespace HeadFirst.Factory;
 
 public class NYPizzaIngredientFactory : IPizzaIngredientFactory
@@ -8,7 +9,7 @@ public class NYPizzaIngredientFactory : IPizzaIngredientFactory
         throw new NotImplementedException();
     }
 
-    public IClams CreateClam()
+    public IClam CreateClam()
     {
         throw new NotImplementedException();
     }

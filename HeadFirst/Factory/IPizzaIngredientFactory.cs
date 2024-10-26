@@ -1,4 +1,5 @@
 ﻿using HeadFirst.Factory.Ingredients;
+using HeadFirst.Factory.Ingredients.Clams;
 namespace HeadFirst.Factory;
 
 public interface IPizzaIngredientFactory
@@ -8,5 +9,5 @@ public interface IPizzaIngredientFactory
     public ICheese CreateCheese();
     public IVegetable[] CreateVeggies();
     public IPepperoni CreatePepperoni();
-    public IClams CreateClam();
+    public IClam CreateClam();
 }
