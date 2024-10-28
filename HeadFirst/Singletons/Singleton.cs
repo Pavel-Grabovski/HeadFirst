@@ -1,19 +1,30 @@
-﻿namespace HeadFirst.Singletons;
+﻿using System.Runtime.CompilerServices;
+
+namespace HeadFirst.Singletons;
 
 public class Singleton
 {
-    private static Singleton? uniqueInstance;
+    private static Singleton uniqueInstance = new Singleton();
 
-    public Guid Guid;
+    public readonly Guid Guid;
 
+    private Singleton()
+    {
+        Guid = Guid.NewGuid();
+    }
+
+    //[MethodImpl(MethodImplOptions.Synchronized)]
     public static Singleton GetInstance()
     {
-        if (uniqueInstance == null)
+        lock (uniqueInstance)
         {
-            uniqueInstance = new Singleton();
-            uniqueInstance.Guid = Guid.NewGuid();
-        }
+            if (uniqueInstance == null)
+            {
+                uniqueInstance = new Singleton();
+            }
 
-        return uniqueInstance;
+            return uniqueInstance;
+        }
     }
+
 }
