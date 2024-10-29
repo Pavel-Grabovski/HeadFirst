@@ -2,6 +2,7 @@
 using HeadFirst.Observer.CSharp.Kingdom;
 using HeadFirst.Observer.CSharp.Kingdom.Observable;
 using HeadFirst.Observer.CSharp.Kingdom.Observers;
+using HeadFirst.Singletons;
 using System.Text;
 
 namespace HeadFirst;
@@ -16,7 +17,6 @@ internal class Program
 
         //KingdomSimulation.Start();
 
-        DecoratorSimulation.Start();
-
+        SingletonSimulation.Start();
     }
 }
