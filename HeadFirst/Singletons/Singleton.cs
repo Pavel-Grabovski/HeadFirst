@@ -4,7 +4,7 @@ namespace HeadFirst.Singletons;
 
 public class Singleton
 {
-    private static Singleton uniqueInstance = new Singleton();
+    private static Singleton _uniqueInstance = new Singleton();
 
     public readonly Guid Guid;
 
@@ -16,15 +16,17 @@ public class Singleton
     //[MethodImpl(MethodImplOptions.Synchronized)]
     public static Singleton GetInstance()
     {
-        lock (uniqueInstance)
-        {
-            if (uniqueInstance == null)
-            {
-                uniqueInstance = new Singleton();
-            }
+        Console.WriteLine(_uniqueInstance.Guid.ToString());
+        return _uniqueInstance;
+        //lock (uniqueInstance)
+        //{
+        //    if (uniqueInstance == null)
+        //    {
+        //        uniqueInstance = new Singleton();
+        //    }
 
-            return uniqueInstance;
-        }
+        //    return uniqueInstance;
+        //}
     }
 
 }
