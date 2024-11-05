@@ -1,4 +1,5 @@
-﻿using HeadFirst.Decorator;
+﻿using HeadFirst.Commands;
+using HeadFirst.Decorator;
 using HeadFirst.Observer.CSharp.Kingdom;
 using HeadFirst.Observer.CSharp.Kingdom.Observable;
 using HeadFirst.Observer.CSharp.Kingdom.Observers;
@@ -17,6 +18,8 @@ internal class Program
 
         //KingdomSimulation.Start();
 
-        SingletonSimulation.Start();
+        //SingletonSimulation.Start();
+
+        RemoteControlTest.Start();
     }
 }
