@@ -1,9 +1,4 @@
-﻿using HeadFirst.Commands;
-using HeadFirst.Decorator;
-using HeadFirst.Observer.CSharp.Kingdom;
-using HeadFirst.Observer.CSharp.Kingdom.Observable;
-using HeadFirst.Observer.CSharp.Kingdom.Observers;
-using HeadFirst.Singletons;
+﻿using HeadFirst.Commands.Controls;
 using System.Text;
 
 namespace HeadFirst;

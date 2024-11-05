@@ -1,4 +1,4 @@
-﻿namespace HeadFirst.Commands;
+﻿namespace HeadFirst.Commands.Controls;
 
 public class SimleRemoteControl
 {
@@ -20,7 +20,7 @@ public class RemoteControlTest
     {
         SimleRemoteControl remote = new SimleRemoteControl();
 
-        Light light = new ();
+        Light light = new();
 
         LightOnCommand lightOn = new(light);
 
