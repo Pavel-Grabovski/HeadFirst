@@ -1,4 +1,6 @@
-﻿namespace HeadFirst.Commands;
+﻿using HeadFirst.Commands.Models;
+
+namespace HeadFirst.Commands;
 
 public class LightOnCommand : ICommand
 {

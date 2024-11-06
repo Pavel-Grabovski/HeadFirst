@@ -13,18 +13,3 @@ public class SimleRemoteControl
         slot.Execute();
     }
 }
-
-public class RemoteControlTest
-{
-    public static void Start()
-    {
-        SimleRemoteControl remote = new SimleRemoteControl();
-
-        Light light = new();
-
-        LightOnCommand lightOn = new(light);
-
-        remote.SetCommand(lightOn);
-        remote.ButtonWasPressed();
-    }
-}
