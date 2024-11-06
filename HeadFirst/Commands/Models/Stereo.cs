@@ -11,7 +11,12 @@ public class Stereo
 
     public void On()
     {
-        Console.WriteLine("On");
+        Console.WriteLine("Stereo on");
+    }
+
+    public void Off()
+    {
+        Console.WriteLine("Stereo off");
     }
 
     public void SetCD()
