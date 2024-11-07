@@ -29,5 +29,19 @@ public class RemoteControlTest
         StereoOnWithCDCommand stereoOnWithCD = new (stereo);
         StereoOffCommand stereoOff = new (stereo);
 
+        remoteControl.SetCommand(0, livingRoomLightOn, livingRoomLightOff);
+        remoteControl.SetCommand(1, kitchenLightOn, kitchenLightOff);
+        remoteControl.SetCommand(2, ceilingFanOn, ceilingFanOff);
+        remoteControl.SetCommand(3, stereoOnWithCD, stereoOff);
+
+        remoteControl.OnButtonPushed(0);
+        remoteControl.OffButtonPushed(0);
+        remoteControl.OnButtonPushed(1);
+        remoteControl.OffButtonPushed(1);
+        remoteControl.OnButtonPushed(2);
+        remoteControl.OffButtonPushed(2);
+        remoteControl.OnButtonPushed(3);
+        remoteControl.OffButtonPushed(3);
+
     }
 }

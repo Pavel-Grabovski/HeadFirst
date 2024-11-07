@@ -43,6 +43,6 @@ public class RemoteControl
 
     public void OffButtonPushed(int slot)
     {
-        onCommands[slot].Execute();
+        OffCommands[slot].Execute();
     }
 }
