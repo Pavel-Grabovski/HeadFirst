@@ -4,20 +4,20 @@ namespace HeadFirst.Commands;
 
 public class LightOnCommand : ICommand
 {
-    private Light light;
+    private readonly Light _light;
 
     public LightOnCommand(Light light)
     {
-        this.light = light;
+        this._light = light;
     }
 
     public void Execute()
     {
-       light.On();
+       _light.On();
     }
 
     public void Undo()
     {
-        light.Off();
+        _light.Off();
     }
 }
