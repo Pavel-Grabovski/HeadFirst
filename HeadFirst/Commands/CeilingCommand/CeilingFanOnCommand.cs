@@ -1,6 +1,6 @@
 ﻿using HeadFirst.Commands.Models;
 
-namespace HeadFirst.Commands;
+namespace HeadFirst.Commands.CeilingCommand;
 
 public class CeilingFanOnCommand : ICommand
 {

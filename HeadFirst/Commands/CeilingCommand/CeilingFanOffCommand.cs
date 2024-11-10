@@ -1,6 +1,6 @@
 ﻿using HeadFirst.Commands.Models;
 
-namespace HeadFirst.Commands;
+namespace HeadFirst.Commands.CeilingCommand;
 
 public class CeilingFanOffCommand : ICommand
 {
@@ -19,6 +19,5 @@ public class CeilingFanOffCommand : ICommand
     public void Undo()
     {
         ceilingFan.On();
-
     }
 }
