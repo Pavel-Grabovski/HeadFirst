@@ -21,11 +21,11 @@ public class Stereo
 
     public void SetCD()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Stereo set cd");
     }
 
     public void SetVolume(int volume)
     {
-        throw new NotImplementedException();
+        Console.WriteLine($"Stereo set volume {volume}");
     }
 }
