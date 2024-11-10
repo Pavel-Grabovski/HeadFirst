@@ -12,6 +12,6 @@ public class CeilingFanOffCommand : CeilingFanSpeedCommand
     public override void Execute()
     {
         _prevSpeed = _ceilingFan.GetSpeed();
-        _ceilingFan.SetSpeed(SpeedEnum.Medium);
+        _ceilingFan.SetSpeed(SpeedEnum.Off);
     }
 }
