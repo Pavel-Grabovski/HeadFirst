@@ -47,7 +47,7 @@ public class RemoteControl
         undoCommand = offCommands[slot];
     }
 
-    public void undoButtonPushed()
+    public void UndoButtonPushed()
     {
         undoCommand.Undo();
     }

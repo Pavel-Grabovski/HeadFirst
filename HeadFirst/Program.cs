@@ -15,6 +15,8 @@ internal class Program
 
         //SingletonSimulation.Start();
 
-        RemoteControlTest.Start();
+        //RemoteControlTest.Start();
+
+        RemoteLoader.Start();
     }
 }

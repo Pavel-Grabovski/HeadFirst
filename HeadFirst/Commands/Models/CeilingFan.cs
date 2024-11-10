@@ -24,6 +24,7 @@ public class CeilingFan
     public void SetSpeed(SpeedEnum speed)
     {
         _speed = speed;
+        Console.WriteLine($"{_location},  ceiling fan is on {_speed}");
     }
 
     public SpeedEnum GetSpeed()
