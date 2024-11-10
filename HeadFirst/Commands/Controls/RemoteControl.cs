@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace HeadFirst.Commands.Controls;
 
@@ -45,4 +41,21 @@ public class RemoteControl
     {
         OffCommands[slot].Execute();
     }
+
+    public override string ToString()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        sb.Append("\n ------- Remote Contrlol ------- \n");
+
+        for (int i = 0; i < onCommands.Length; i++)
+        {
+            sb.Append($"Slot: {i} {onCommands[i].ToString()} -- {OffCommands[i].ToString()} \n");
+        }
+
+        return sb.ToString();
+    }
+
+
+
 }

@@ -34,6 +34,8 @@ public class RemoteControlTest
         remoteControl.SetCommand(2, ceilingFanOn, ceilingFanOff);
         remoteControl.SetCommand(3, stereoOnWithCD, stereoOff);
 
+        Console.WriteLine(remoteControl);
+
         remoteControl.OnButtonPushed(0);
         remoteControl.OffButtonPushed(0);
         remoteControl.OnButtonPushed(1);
