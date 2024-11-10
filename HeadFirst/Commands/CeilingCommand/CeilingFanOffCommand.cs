@@ -2,22 +2,16 @@
 
 namespace HeadFirst.Commands.CeilingCommand;
 
-public class CeilingFanOffCommand : ICommand
+public class CeilingFanOffCommand : CeilingFanSpeedCommand
 {
-    private readonly CeilingFan ceilingFan;
-
-    public CeilingFanOffCommand(CeilingFan ceilingFan)
+    public CeilingFanOffCommand(CeilingFan ceilingFan) 
+        : base(ceilingFan)
     {
-        this.ceilingFan = ceilingFan;
     }
 
-    public void Execute()
+    public override void Execute()
     {
-        ceilingFan.Off();
-    }
-
-    public void Undo()
-    {
-        ceilingFan.On();
+        _prevSpeed = _ceilingFan.GetSpeed();
+        _ceilingFan.SetSpeed(SpeedEnum.Medium);
     }
 }
