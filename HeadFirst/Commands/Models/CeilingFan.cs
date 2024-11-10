@@ -2,11 +2,13 @@
 
 public class CeilingFan
 {
-    private readonly string _name;
+    private readonly string _location;
 
-    public CeilingFan(string name)
+    private SpeedEnum _speed;
+
+    public CeilingFan(string location)
     {
-        _name = name;
+        _location = location;
     }
 
     public void On()
@@ -18,4 +20,15 @@ public class CeilingFan
     {
         Console.WriteLine("Ceiling fan off");
     }
+
+    public void SetSpeed(SpeedEnum speed)
+    {
+        _speed = speed;
+    }
+
+    public SpeedEnum GetSpeed()
+    {
+        return _speed;
+    }
+
 }
