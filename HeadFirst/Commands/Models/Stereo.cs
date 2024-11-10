@@ -2,26 +2,26 @@
 
 public class Stereo
 {
-    private readonly string _name;
+    private readonly string _location;
 
-    public Stereo(string name)
+    public Stereo(string location)
     {
-        _name = name;
+        _location = location;
     }
 
     public void On()
     {
-        Console.WriteLine("Stereo on");
+        Console.WriteLine($"{_location} stereo on");
     }
 
     public void Off()
     {
-        Console.WriteLine("Stereo off");
+        Console.WriteLine($"{_location} stereo off");
     }
 
     public void SetCD()
     {
-        Console.WriteLine("Stereo set cd");
+        Console.WriteLine($"{_location} stereo set cd");
     }
 
     public void SetVolume(int volume)

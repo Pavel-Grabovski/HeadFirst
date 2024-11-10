@@ -1,21 +1,21 @@
 ﻿namespace HeadFirst.Commands.Models;
 
-public class Light
+public class TV
 {
     private readonly string _location;
 
-    public Light(string location)
+    public TV(string location)
     {
         _location = location;
     }
 
     public void On()
     {
-        Console.WriteLine($"{_location} light On");
+        Console.WriteLine($"{_location} TV on");
     }
 
     public void Off()
     {
-        Console.WriteLine($"{_location} light off");
+        Console.WriteLine($"{_location} TV off");
     }
 }
