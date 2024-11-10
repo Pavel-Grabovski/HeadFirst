@@ -15,4 +15,9 @@ public class StereoOnWithCDCommand : ICommand
         stereo.SetCD();
         stereo.SetVolume(11);
     }
+
+    public void Undo()
+    {
+        stereo.Off();
+    }
 }

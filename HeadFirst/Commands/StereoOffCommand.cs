@@ -13,4 +13,11 @@ public class StereoOffCommand : ICommand
     {
         stereo.Off();
     }
+
+    public void Undo()
+    {
+        stereo.On();
+        stereo.SetCD();
+        stereo.SetVolume(11);
+    }
 }

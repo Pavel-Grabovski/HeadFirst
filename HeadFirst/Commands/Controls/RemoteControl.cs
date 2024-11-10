@@ -24,6 +24,8 @@ public class RemoteControl
     private class NoCommand : ICommand
     {
         public void Execute() { }
+
+        public void Undo() { }
     }
 
     public void SetCommand(int slot, ICommand onCommand, ICommand offCommand)

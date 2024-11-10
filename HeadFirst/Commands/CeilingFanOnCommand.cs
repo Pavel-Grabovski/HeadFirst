@@ -15,4 +15,9 @@ public class CeilingFanOnCommand : ICommand
     {
         ceilingFan.On();
     }
+
+    public void Undo()
+    {
+        ceilingFan.Off();
+    }
 }

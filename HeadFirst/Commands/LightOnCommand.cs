@@ -15,4 +15,9 @@ public class LightOnCommand : ICommand
     {
        light.On();
     }
+
+    public void Undo()
+    {
+        light.Off();
+    }
 }

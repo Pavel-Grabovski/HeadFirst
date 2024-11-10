@@ -14,4 +14,9 @@ public class GarageDoorDownCommand : ICommand
     {
         door.Close();
     }
+
+    public void Undo()
+    {
+        door.Open();
+    }
 }
