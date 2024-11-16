@@ -1,4 +1,5 @@
-﻿using HeadFirst.Commands;
+﻿using HeadFirst.Adapter;
+using HeadFirst.Commands;
 using System.Text;
 
 namespace HeadFirst;
@@ -17,6 +18,8 @@ internal class Program
 
         //RemoteControlTest.Start();
 
-        RemoteLoader.Start();
+        //RemoteLoader.Start();
+
+        DuckTestDrive.Start();
     }
 }
