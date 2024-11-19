@@ -4,7 +4,7 @@ namespace HeadFirst.Adapter;
 
 public class TurkeyAdapter : IDuck
 {
-    private ITurkey _turkey;
+    private readonly ITurkey _turkey;
     public TurkeyAdapter(ITurkey turkey)
     {
         this._turkey = turkey;
