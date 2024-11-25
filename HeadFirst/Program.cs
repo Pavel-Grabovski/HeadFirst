@@ -1,5 +1,6 @@
 ﻿using HeadFirst.Adapter;
 using HeadFirst.Commands;
+using HeadFirst.Facade;
 using System.Text;
 
 namespace HeadFirst;
@@ -20,6 +21,8 @@ internal class Program
 
         //RemoteLoader.Start();
 
-        DuckTestDrive.Start();
+        //DuckTestDrive.Start();
+
+        HomeTheaterTestDrive.Start();
     }
 }
