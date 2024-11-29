@@ -1,6 +1,7 @@
 ﻿using HeadFirst.Adapter;
 using HeadFirst.Commands;
 using HeadFirst.Facade;
+using HeadFirst.TemplateMethod;
 using System.Text;
 
 namespace HeadFirst;
@@ -23,6 +24,8 @@ internal class Program
 
         //DuckTestDrive.Start();
 
-        HomeTheaterTestDrive.Start();
+        //HomeTheaterTestDrive.Start();
+
+        BeverageTestDrive.Start();
     }
 }
