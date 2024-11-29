@@ -1,6 +1,6 @@
 ﻿namespace HeadFirst.TemplateMethod;
 
-public class Coffee : CaffeineBeverage
+public class Coffee : CaffeineBeverageWithHook
 {
     public override void AddComponents()
     {

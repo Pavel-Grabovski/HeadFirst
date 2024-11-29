@@ -1,14 +1,21 @@
 ﻿namespace HeadFirst.TemplateMethod;
 
-public abstract class CaffeineBeverage
+public abstract class CaffeineBeverageWithHook
 {
     public void PrepareRecipe()
     {
         BoilWater();
         Brew();
         PourInCup();
-        AddComponents();
+
+        if(IsCustomerWantsCondiments())
+        {
+            AddComponents();
+        }
     }
+    public abstract void Brew();
+
+    public abstract void AddComponents();
 
     public void BoilWater()
     {
@@ -20,7 +27,8 @@ public abstract class CaffeineBeverage
         Console.WriteLine("Pouring into cup");
     }
 
-    public abstract void Brew();
-
-    public abstract void AddComponents();
+    public virtual bool IsCustomerWantsCondiments()
+    {
+        return true;
+    }
 }
