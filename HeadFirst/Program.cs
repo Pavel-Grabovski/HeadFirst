@@ -1,6 +1,7 @@
 ﻿using HeadFirst.Adapter;
 using HeadFirst.Commands;
 using HeadFirst.Facade;
+using HeadFirst.StatePattern;
 using HeadFirst.TemplateMethod;
 using System.Text;
 
@@ -26,6 +27,8 @@ internal class Program
 
         //HomeTheaterTestDrive.Start();
 
-        BeverageTestDrive.Start();
+        //BeverageTestDrive.Start();
+
+        GumballMachineTestDrive.Start();
     }
 }
