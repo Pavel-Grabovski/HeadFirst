@@ -120,4 +120,14 @@ public class GumballMachine
                 $"Inventory: {_countBalls} gumballs\n" +
                 "Machine is waiting for quarter\n";
     }
+
+    internal object GetHasQuarterState()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void SetState(object v)
+    {
+        throw new NotImplementedException();
+    }
 }
