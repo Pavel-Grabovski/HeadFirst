@@ -1,21 +1,35 @@
 ﻿using HeadFirst.Commands.Models;
 using System.Reflection.PortableExecutable;
 using System.Reflection;
+using HeadFirst.StatePattern.States;
 
 namespace HeadFirst.StatePattern;
 
 public class GumballMachine
 {
-    private StateEnum _state = StateEnum.NO_BALLS;
+    private readonly IState _soldOutState;
+    private readonly IState _noQuarterState;
+    private readonly IState _hasQuarterState;
+    private readonly IState _soldState;
 
-    private int _countBalls = 0;
+    private IState _state = _soldOutState;
+
+    private int _count = 0;
 
     public GumballMachine(int count)
     {
-        _countBalls = count;
+        _count = count;
+
+        _soldOutState = new SoldOutState(this);
+        _noQuarterState = new NoQuarterState(this);
+        _hasQuarterState = new HasQuarterState(this);
+        _soldState = new SoldState(this);
+
 
         if (count > 0)
-            _state = StateEnum.NO_COIN;
+            _state = _noQuarterState;
+        else 
+            _state = _soldOutState;
     }
 
     public void InsertCoin()
@@ -87,9 +101,9 @@ public class GumballMachine
         if (_state == StateEnum.SOLD_BALS)
         {
             Console.WriteLine("A gumball comes rolling out the slot");
-            _countBalls--;
+            _count--;
 
-            if (_countBalls == 0)
+            if (_count == 0)
             {
                 Console.WriteLine("Oops, out of gumballs!");
                 _state = StateEnum.NO_BALLS;
@@ -117,7 +131,7 @@ public class GumballMachine
     {
         return "Mighty Gumball, Inc.\n" +
                 "Standing Gumball Model #2004\n" +
-                $"Inventory: {_countBalls} gumballs\n" +
+                $"Inventory: {_count} gumballs\n" +
                 "Machine is waiting for quarter\n";
     }
 
