@@ -6,25 +6,25 @@ public class GumballMachineTestDrive
     {
         GumballMachine gumballMachine = new GumballMachine(5);
         Console.WriteLine(gumballMachine);
-        gumballMachine.InsertCoin();
+        gumballMachine.insertQuarter();
         gumballMachine.TurnCrank();
         Console.WriteLine(gumballMachine);
-        gumballMachine.InsertCoin();
+        gumballMachine.insertQuarter();
         gumballMachine.ReturnCoin();
         gumballMachine.TurnCrank();
         Console.WriteLine(gumballMachine);
-        gumballMachine.InsertCoin();
+        gumballMachine.insertQuarter();
         gumballMachine.TurnCrank();
-        gumballMachine.InsertCoin();
+        gumballMachine.insertQuarter();
         gumballMachine.TurnCrank();
         gumballMachine.ReturnCoin();
         Console.WriteLine(gumballMachine);
-        gumballMachine.InsertCoin();
-        gumballMachine.InsertCoin();
+        gumballMachine.insertQuarter();
+        gumballMachine.insertQuarter();
         gumballMachine.TurnCrank();
-        gumballMachine.InsertCoin();
+        gumballMachine.insertQuarter();
         gumballMachine.TurnCrank();
-        gumballMachine.InsertCoin();
+        gumballMachine.insertQuarter();
         gumballMachine.TurnCrank();
         Console.WriteLine(gumballMachine);
     }

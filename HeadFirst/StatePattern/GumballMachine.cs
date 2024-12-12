@@ -32,100 +32,36 @@ public class GumballMachine
             _state = _soldOutState;
     }
 
-    public void InsertCoin()
+
+    public void InsertQuarter()
     {
-        if (_state == StateEnum.HAS_COIN)
-        {
-            Console.WriteLine("You can’t insert another quarter");
-        }
-        else if (_state == StateEnum.NO_COIN)
-        {
-            _state = StateEnum.HAS_COIN;
-            Console.WriteLine("You inserted a quarter");
-        }
-        else if (_state == StateEnum.NO_BALLS)
-        {
-            Console.WriteLine("You can’t insert a quarter, the machine is sold out");
-        }
-        else if (_state == StateEnum.SOLD_BALS)
-        {
-            Console.WriteLine("Please wait, we’re already giving you a gumball");
-        }
+        _state.InsertQuarter();
     }
 
-    public void ReturnCoin()
+    public void ejectQuarter()
     {
-        if (_state == StateEnum.HAS_COIN)
-        {
-            Console.WriteLine("Quarter returned");
-            _state = StateEnum.NO_COIN;
-        }
-        else if (_state == StateEnum.NO_COIN)
-        {
-            Console.WriteLine("You haven’t inserted a quarter");
-        }
-        else if (_state == StateEnum.SOLD_BALS)
-        {
-            Console.WriteLine("Sorry, you already turned the crank");
-        }
-        else if (_state == StateEnum.NO_BALLS)
-        {
-            Console.WriteLine("You can’t eject, you haven’t inserted a quarter yet");
-        }
+        _state.EjectQuarter();
     }
 
-    public void TurnCrank()
+    public void turnCrank()
     {
-        if (_state == StateEnum.SOLD_BALS)
-        {
-            Console.WriteLine("Turning twice doesn’t get you another gumball!");
-        }
-        else if (_state == StateEnum.NO_COIN)
-        {
-            Console.WriteLine("You turned but there’s no quarter");
-        }
-        else if (_state == StateEnum.NO_BALLS)
-        {
-            Console.WriteLine("You turned, but there are no gumballs");
-        }
-        else if (_state == StateEnum.HAS_COIN)
-        {
-            Console.WriteLine("You turned...");
-            _state = StateEnum.SOLD_BALS;
-            Dispense();
-        }
+        _state.TurnCrank();
+        _state.Dispense();
     }
 
-    public void Dispense()
+    internal void SetState(IState state)
     {
-        if (_state == StateEnum.SOLD_BALS)
-        {
-            Console.WriteLine("A gumball comes rolling out the slot");
+        _state = state;
+    }
+
+    internal void ReleaseBall()
+    {
+        Console.WriteLine("A gumball comes rolling out the slot...");
+        if (_count != 0)
             _count--;
-
-            if (_count == 0)
-            {
-                Console.WriteLine("Oops, out of gumballs!");
-                _state = StateEnum.NO_BALLS;
-            }
-            else
-            {
-                _state = StateEnum.NO_COIN;
-            }
-        }
-        else if (_state == StateEnum.NO_COIN)
-        {
-            throw new Exception("You need to pay first");
-        }
-        else if (_state == StateEnum.NO_BALLS)
-        {
-            throw new Exception("No gumball dispensed");
-        }
-        else if (_state == StateEnum.HAS_COIN)
-        {
-            throw new Exception("No gumball dispensed");
-        }
     }
+
+
 
     public override string ToString()
     {
@@ -135,13 +71,9 @@ public class GumballMachine
                 "Machine is waiting for quarter\n";
     }
 
-    internal object GetHasQuarterState()
-    {
-        throw new NotImplementedException();
-    }
+    internal IState GetHasQuarterState() 
+        => _hasQuarterState;
 
-    internal void SetState(object v)
-    {
-        throw new NotImplementedException();
-    }
+    public int GetCount() 
+        => _count;
 }
