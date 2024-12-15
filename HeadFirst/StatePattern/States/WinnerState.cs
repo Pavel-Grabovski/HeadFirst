@@ -11,21 +11,40 @@ public class WinnerState : IState
 
     public void Dispense()
     {
-        throw new NotImplementedException();
+        _gumballMachine.ReleaseBall();
+
+        if(_gumballMachine.GetCount() == 0)
+        {
+            _gumballMachine.SetState(_gumballMachine.GetSoldOutState());
+        }
+        else
+        {
+            _gumballMachine.ReleaseBall();
+            Console.WriteLine("YOU’RE A WINNER! You got two gumballs for your quarter");
+            if (_gumballMachine.GetCount() > 0)
+            {
+                _gumballMachine.SetState(_gumballMachine.GetNoQuarterState());
+            }
+            else
+            {
+                Console.WriteLine("Oops, out of gumballs!");
+                _gumballMachine.SetState(_gumballMachine.GetSoldOutState());
+            }
+        }
     }
 
     public void EjectQuarter()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Sorry, you already turned the crank");
     }
 
     public void InsertQuarter()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Please wait, we’re already giving you a gumball");
     }
 
     public void TurnCrank()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Turning twice doesn’t get you another gumball!");
     }
 }

@@ -8,8 +8,9 @@ public class GumballMachine
     private readonly IState _noQuarterState;
     private readonly IState _hasQuarterState;
     private readonly IState _soldState;
+    private readonly IState _winnerState;
 
-    private IState _state = _soldOutState;
+    private IState _state;
 
     private int _count = 0;
 
@@ -21,6 +22,7 @@ public class GumballMachine
         _noQuarterState = new NoQuarterState(this);
         _hasQuarterState = new HasQuarterState(this);
         _soldState = new SoldState(this);
+        _winnerState = new WinnerState(this);
 
 
         if (count > 0)
@@ -79,6 +81,9 @@ public class GumballMachine
 
     public IState GetSoldOutState()
         => _soldOutState;
+
+    public IState GetWinnerState()
+        => _winnerState;
 
     public int GetCount() 
         => _count;
