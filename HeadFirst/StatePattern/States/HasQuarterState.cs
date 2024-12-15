@@ -14,21 +14,23 @@ public class HasQuarterState : IState
 
     public void Dispense()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("No gumball dispensed");
     }
 
     public void EjectQuarter()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Quarter returned");
+        _gumballMachine.SetState(_gumballMachine.GetNoQuarterState());
     }
 
     public void InsertQuarter()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("You can’t insert another quarter");
     }
 
     public void TurnCrank()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("You turned...");
+        _gumballMachine.SetState(_gumballMachine.GetSoldState());
     }
 }

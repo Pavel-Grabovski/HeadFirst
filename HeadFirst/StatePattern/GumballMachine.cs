@@ -1,7 +1,4 @@
-﻿using HeadFirst.Commands.Models;
-using System.Reflection.PortableExecutable;
-using System.Reflection;
-using HeadFirst.StatePattern.States;
+﻿using HeadFirst.StatePattern.States;
 
 namespace HeadFirst.StatePattern;
 
@@ -38,12 +35,12 @@ public class GumballMachine
         _state.InsertQuarter();
     }
 
-    public void ejectQuarter()
+    public void EjectQuarter()
     {
         _state.EjectQuarter();
     }
 
-    public void turnCrank()
+    public void TurnCrank()
     {
         _state.TurnCrank();
         _state.Dispense();
@@ -71,8 +68,17 @@ public class GumballMachine
                 "Machine is waiting for quarter\n";
     }
 
-    internal IState GetHasQuarterState() 
+    public IState GetNoQuarterState() 
+        => _noQuarterState;
+    
+    public IState GetHasQuarterState() 
         => _hasQuarterState;
+
+    public IState GetSoldState()
+        => _soldState;
+
+    public IState GetSoldOutState()
+        => _soldOutState;
 
     public int GetCount() 
         => _count;
