@@ -35,6 +35,8 @@ public class SoldState : IState
         Console.WriteLine("Please wait, we’re already giving you a gumball");
     }
 
+    public void Refill() { }
+
     public void TurnCrank()
     {
         Console.WriteLine("Turning twice doesn’t get you another gumball!");

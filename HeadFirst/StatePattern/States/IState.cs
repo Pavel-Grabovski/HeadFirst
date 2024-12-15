@@ -12,4 +12,5 @@ public interface IState
     public void EjectQuarter();
     public void InsertQuarter();
     public void TurnCrank();
+    public void Refill();
 }

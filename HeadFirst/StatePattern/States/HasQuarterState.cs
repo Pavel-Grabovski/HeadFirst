@@ -38,4 +38,6 @@ public class HasQuarterState : IState
         else
             _gumballMachine.SetState(_gumballMachine.GetSoldState());
     }
+
+    public void Refill() { }
 }

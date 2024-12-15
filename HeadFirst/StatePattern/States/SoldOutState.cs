@@ -27,6 +27,11 @@ public class SoldOutState : IState
         Console.WriteLine("You can't insert a quarter, the machine is sold out");
     }
 
+    public void Refill()
+    {
+        _gumballMachine.SetState(_gumballMachine.GetNoQuarterState());
+    }
+
     public void TurnCrank()
     {
         Console.WriteLine("You turned, but there are no gumballs");

@@ -48,19 +48,24 @@ public class GumballMachine
         _state.Dispense();
     }
 
-    internal void SetState(IState state)
+    public void SetState(IState state)
     {
         _state = state;
     }
 
-    internal void ReleaseBall()
+    public void ReleaseBall()
     {
         Console.WriteLine("A gumball comes rolling out the slot...");
         if (_count != 0)
             _count--;
     }
 
-
+    public void Refill(int count)
+    {
+        _count += count;
+        Console.WriteLine("The gumball machine was just refilled; it's new count is: " + _count);
+        _state.Refill();
+    }
 
     public override string ToString()
     {
