@@ -14,8 +14,11 @@ public class GumballMachine
 
     private int _count = 0;
 
-    public GumballMachine(int count)
+    private readonly string _location;
+
+    public GumballMachine(string location, int count)
     {
+        _location = location;
         _count = count;
 
         _soldOutState = new SoldOutState(this);
@@ -92,4 +95,10 @@ public class GumballMachine
 
     public int GetCount() 
         => _count;
+
+    public string GetLocation() 
+        => _location;
+
+    public IState GetState()
+        => _state;
 }
