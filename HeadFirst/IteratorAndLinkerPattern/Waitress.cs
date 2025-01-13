@@ -1,4 +1,6 @@
-﻿namespace HeadFirst.IteratorAndLinkerPattern;
+﻿using System.Collections;
+
+namespace HeadFirst.IteratorAndLinkerPattern;
 
 public class Waitress
 {
@@ -11,21 +13,22 @@ public class Waitress
     }
     public void PrintMenu()
     {
-        var pancakeIterator = pancakeHouseMenu.CreateIterator();
-        var dinerIterator = dinerMenu.CreateIterator();
+        IEnumerator<MenuItem> pancakeIterator = pancakeHouseMenu.GetEnumerator();
+        IEnumerator<MenuItem> dinerIterator = dinerMenu.GetEnumerator();
         Console.WriteLine("MENU\n----\nBREAKFAST");
         PrintMenu(pancakeIterator);
         Console.WriteLine("\nLUNCH");
         PrintMenu(dinerIterator);
     }
-    private void PrintMenu(Iterator iterator)
+    private void PrintMenu(IEnumerator<MenuItem> iterator)
     {
-        while (iterator.HasNext())
+        while (iterator.MoveNext())
         {
-            MenuItem menuItem = iterator.Next();
-            Console.WriteLine(menuItem.GetName() + ", ");
-            Console.WriteLine(menuItem.GetPrice() + " -- ");
-            Console.WriteLine(menuItem.GetDescription());
+            MenuItem menuItem = iterator.Current;
+            Console.Write(menuItem.GetName() + ", ");
+            Console.Write(menuItem.GetPrice() + " -- ");
+            Console.Write(menuItem.GetDescription());
+            Console.WriteLine();
         }
     }
     // другие методы

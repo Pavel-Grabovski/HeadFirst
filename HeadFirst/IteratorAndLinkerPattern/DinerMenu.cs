@@ -1,6 +1,8 @@
-﻿namespace HeadFirst.IteratorAndLinkerPattern;
+﻿using System.Collections;
 
-public class DinerMenu
+namespace HeadFirst.IteratorAndLinkerPattern;
+
+public class DinerMenu : IEnumerable<MenuItem>
 {
     private const int MAX_ITEMS = 6;
     int numberOfItems = 0;
@@ -39,10 +41,13 @@ public class DinerMenu
         }
     }
 
-    public Iterator CreateIterator()
+    public IEnumerator<MenuItem> GetEnumerator()
     {
-        return new DinerMenuIterator(menuItems);
+        return new DinerMenuEnumerator(menuItems);
     }
 
-    // ...Другие методы меню...
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return menuItems.GetEnumerator();
+    }
 }

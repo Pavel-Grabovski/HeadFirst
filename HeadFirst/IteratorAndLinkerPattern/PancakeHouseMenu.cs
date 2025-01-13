@@ -1,6 +1,8 @@
-﻿namespace HeadFirst.IteratorAndLinkerPattern;
+﻿using System.Collections;
 
-public class PancakeHouseMenu
+namespace HeadFirst.IteratorAndLinkerPattern;
+
+public class PancakeHouseMenu : IEnumerable<MenuItem>
 {
     List<MenuItem> menuItems;
     public PancakeHouseMenu()
@@ -34,9 +36,14 @@ public class PancakeHouseMenu
         menuItems.Add(menuItem);
     }
 
-    public Iterator CreateIterator()
+    public IEnumerator<MenuItem> GetEnumerator()
     {
-        return new PancakeHouseMenuIterator(menuItems);
+        return new PancakeHouseMenuIEnumerator(menuItems);
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return menuItems.GetEnumerator();
     }
 
     // другие методы
