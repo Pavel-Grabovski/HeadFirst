@@ -9,12 +9,12 @@ public class Waitress
         this.pancakeHouseMenu = pancakeHouseMenu;
         this.dinerMenu = dinerMenu;
     }
-    public void printMenu()
+    public void PrintMenu()
     {
         var pancakeIterator = pancakeHouseMenu.CreateIterator();
         var dinerIterator = dinerMenu.CreateIterator();
         Console.WriteLine("MENU\n----\nBREAKFAST");
-        printMenu(pancakeIterator);
+        PrintMenu(pancakeIterator);
         Console.WriteLine("\nLUNCH");
         PrintMenu(dinerIterator);
     }

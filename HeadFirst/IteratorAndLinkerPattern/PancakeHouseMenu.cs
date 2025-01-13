@@ -33,9 +33,11 @@ public class PancakeHouseMenu
         MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
         menuItems.Add(menuItem);
     }
-    public List<MenuItem> GetMenuItems()
+
+    public Iterator CreateIterator()
     {
-        return menuItems;
+        return new PancakeHouseMenuIterator(menuItems);
     }
+
     // другие методы
 }
