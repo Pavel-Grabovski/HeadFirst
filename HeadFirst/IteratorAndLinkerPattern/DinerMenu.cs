@@ -38,9 +38,11 @@ public class DinerMenu
             numberOfItems = numberOfItems + 1;
         }
     }
-    public MenuItem[] GetMenuItems()
+
+    public Iterator CreateIterator()
     {
-        return menuItems;
+        return new DinerMenuIterator(menuItems);
     }
+
     // ...Другие методы меню...
 }
