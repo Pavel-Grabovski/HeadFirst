@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="Commands\Новая папка\" />
-    <Folder Include="IteratorAndLinkerPattern\" />
   </ItemGroup>
 
 </Project>
