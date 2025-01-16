@@ -2,5 +2,5 @@
 
 public interface IMenu
 {
-  
+    IEnumerator<MenuItem> CreateEnumerator();
 }
