@@ -1,33 +1,24 @@
-﻿using System.Collections;
-
-namespace HeadFirst.IteratorAndLinkerPattern;
+﻿namespace HeadFirst.IteratorAndLinkerPattern;
 
 public class Waitress
 {
-    IMenu pancakeHouseMenu;
-    IMenu dinerMenu;
-    IMenu cafeMenu;
+    List<IMenu> menus = new List<IMenu>();
 
-    public Waitress(IMenu pancakeHouseMenu, IMenu dinerMenu, IMenu cafeMenu)
+    public Waitress(params IMenu[] menus)
     {
-        this.pancakeHouseMenu = pancakeHouseMenu;
-        this.dinerMenu = dinerMenu;
-        this.cafeMenu = cafeMenu;
+        this.menus.AddRange(menus);
     }
+
     public void PrintMenu()
     {
-        IEnumerator<MenuItem> pancakeIterator = pancakeHouseMenu.CreateEnumerator();
-        IEnumerator<MenuItem> dinerIterator = dinerMenu.CreateEnumerator();
-        IEnumerator<MenuItem> cafeIterator = cafeMenu.CreateEnumerator();
+        List<IMenu>.Enumerator menuIterator = menus.GetEnumerator();
 
-        Console.WriteLine("MENU\n----\nBREAKFAST");
-        PrintMenu(pancakeIterator);
+        while (menuIterator.MoveNext())
+        {
+            IMenu menu = menuIterator.Current;
+            PrintMenu(menu.CreateEnumerator());
+        }
 
-        Console.WriteLine("\nLUNCH");
-        PrintMenu(dinerIterator);
-
-        Console.WriteLine("\nDINNER");
-        PrintMenu(cafeIterator);
 
     }
     private void PrintMenu(IEnumerator<MenuItem> iterator)
