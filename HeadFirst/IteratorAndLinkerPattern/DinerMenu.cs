@@ -11,16 +11,36 @@ public class DinerMenu : IMenu
     public DinerMenu()
     {
         menuItems = new MenuItem[MAX_ITEMS];
+
         AddItem("Vegetarian BLT",
-        "(Fakin’) Bacon with lettuce & tomato on whole wheat", true, 2.99);
+            "(Fakin’) Bacon with lettuce & tomato on whole wheat",
+            true,
+            2.99);
+
         AddItem("BLT",
-        "Bacon with lettuce & tomato on whole wheat", false, 2.99);
+            "Bacon with lettuce & tomato on whole wheat",
+            false,
+            2.99);
+        
         AddItem("Soup of the day",
-        "Soup of the day, with a side of potato salad", false, 3.29);
+            "Soup of the day, with a side of potato salad",
+            false,
+            3.29);
+
         AddItem("Hotdog",
-        "A hot dog, with saurkraut, relish, onions, topped with cheese",
-        false, 3.05);
-        // a couple of other Diner Menu items added here
+            "A hot dog, with saurkraut, relish, onions, topped with cheese",
+            false,
+            3.05);
+
+        AddItem("Steamed Veggies and Brown Rice",
+            "Steamed vegetables over brown rice",
+            true,
+            3.99);
+
+        AddItem("Pasta",
+            "Spaghetti with Marinara Sauce, and a slice of sourdough bread",
+            false,
+            3.89);
     }
 
     public void AddItem(

@@ -5,7 +5,7 @@ namespace HeadFirst.IteratorAndLinkerPattern;
 public class PancakeHouseMenuIEnumerator : IEnumerator<MenuItem>
 {
     private readonly List<MenuItem> items;
-    private int position = 0;
+    private int position = -1;
 
     public PancakeHouseMenuIEnumerator(List<MenuItem> items)
     {
