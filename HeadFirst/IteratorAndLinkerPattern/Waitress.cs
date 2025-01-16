@@ -4,17 +4,17 @@ namespace HeadFirst.IteratorAndLinkerPattern;
 
 public class Waitress
 {
-    PancakeHouseMenu pancakeHouseMenu;
-    DinerMenu dinerMenu;
-    public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu)
+    IMenu pancakeHouseMenu;
+    IMenu dinerMenu;
+    public Waitress(IMenu pancakeHouseMenu, IMenu dinerMenu)
     {
         this.pancakeHouseMenu = pancakeHouseMenu;
         this.dinerMenu = dinerMenu;
     }
     public void PrintMenu()
     {
-        IEnumerator<MenuItem> pancakeIterator = pancakeHouseMenu.GetEnumerator();
-        IEnumerator<MenuItem> dinerIterator = dinerMenu.GetEnumerator();
+        IEnumerator<MenuItem> pancakeIterator = pancakeHouseMenu.CreateEnumerator();
+        IEnumerator<MenuItem> dinerIterator = dinerMenu.CreateEnumerator();
         Console.WriteLine("MENU\n----\nBREAKFAST");
         PrintMenu(pancakeIterator);
         Console.WriteLine("\nLUNCH");

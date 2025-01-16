@@ -2,7 +2,7 @@
 
 namespace HeadFirst.IteratorAndLinkerPattern;
 
-public class PancakeHouseMenu : IEnumerable<MenuItem>
+public class PancakeHouseMenu : IMenu
 {
     List<MenuItem> menuItems;
     public PancakeHouseMenu()
@@ -36,14 +36,9 @@ public class PancakeHouseMenu : IEnumerable<MenuItem>
         menuItems.Add(menuItem);
     }
 
-    public IEnumerator<MenuItem> GetEnumerator()
+    public IEnumerator<MenuItem> CreateEnumerator()
     {
         return new PancakeHouseMenuIEnumerator(menuItems);
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return menuItems.GetEnumerator();
     }
 
     // другие методы

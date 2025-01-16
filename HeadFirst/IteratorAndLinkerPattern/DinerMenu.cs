@@ -2,7 +2,7 @@
 
 namespace HeadFirst.IteratorAndLinkerPattern;
 
-public class DinerMenu : IEnumerable<MenuItem>
+public class DinerMenu : IMenu
 {
     private const int MAX_ITEMS = 6;
     int numberOfItems = 0;
@@ -41,13 +41,8 @@ public class DinerMenu : IEnumerable<MenuItem>
         }
     }
 
-    public IEnumerator<MenuItem> GetEnumerator()
+    public IEnumerator<MenuItem> CreateEnumerator()
     {
         return new DinerMenuEnumerator(menuItems);
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return menuItems.GetEnumerator();
     }
 }
