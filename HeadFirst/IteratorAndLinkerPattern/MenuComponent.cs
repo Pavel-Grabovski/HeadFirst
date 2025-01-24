@@ -12,7 +12,7 @@ public abstract class MenuComponent
 
     public abstract string GetDescription();
 
-    public abstract string GetPrice();
+    public abstract double GetPrice();
 
     public abstract bool IsVegetarian();
 

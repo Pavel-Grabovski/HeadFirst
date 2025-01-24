@@ -1,6 +1,6 @@
 ﻿namespace HeadFirst.IteratorAndLinkerPattern;
 
-public class MenuItem
+public class MenuComponent : MenuComponent
 {
     private readonly string _name;
     private readonly string _description;
@@ -15,23 +15,49 @@ public class MenuItem
         _price = price;
     }
 
-    public string GetName()
+    public override string GetName()
     {
         return _name;
     }
 
-    public string GetDescription()
+    public override string GetDescription()
     {
         return _description;
     }
 
-    public double GetPrice()
+    public override double GetPrice()
     {
         return _price;
     }
 
-    public bool IsVegetarian()
+    public override bool IsVegetarian()
     {
         return _vegetarian;
+    }
+
+    public override void Add(MenuComponent menuComponent)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void Remove(MenuComponent menuComponent)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override MenuComponent GetChild(int index)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void Print()
+    {
+        Console.Write(" " + GetName());
+
+        if (_vegetarian)
+            Console.Write("(v)");
+
+        Console.WriteLine(", " + GetPrice());
+        Console.WriteLine("   --  " + GetDescription());
     }
 }
