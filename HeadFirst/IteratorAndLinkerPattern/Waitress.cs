@@ -2,35 +2,15 @@
 
 public class Waitress
 {
-    List<IMenu> menus = new List<IMenu>();
+    MenuComponent allMenus;
 
-    public Waitress(params IMenu[] menus)
+    public Waitress(MenuComponent menuComponent )
     {
-        this.menus.AddRange(menus);
+        allMenus = menuComponent;
     }
 
     public void PrintMenu()
     {
-        List<IMenu>.Enumerator menuIterator = menus.GetEnumerator();
-
-        while (menuIterator.MoveNext())
-        {
-            IMenu menu = menuIterator.Current;
-            PrintMenu(menu.CreateEnumerator());
-        }
-
-
+        allMenus.Print();
     }
-    private void PrintMenu(IEnumerator<MenuItem> iterator)
-    {
-        while (iterator.MoveNext())
-        {
-            MenuItem menuItem = iterator.Current;
-            Console.Write(menuItem.GetName() + ", ");
-            Console.Write(menuItem.GetPrice() + " -- ");
-            Console.Write(menuItem.GetDescription());
-            Console.WriteLine();
-        }
-    }
-    // другие методы
 }
