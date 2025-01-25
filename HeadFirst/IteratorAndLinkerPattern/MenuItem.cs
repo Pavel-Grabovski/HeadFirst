@@ -1,6 +1,6 @@
 ﻿namespace HeadFirst.IteratorAndLinkerPattern;
 
-public class MenuComponent : MenuComponent
+public class MenuItem : MenuComponent
 {
     private readonly string _name;
     private readonly string _description;

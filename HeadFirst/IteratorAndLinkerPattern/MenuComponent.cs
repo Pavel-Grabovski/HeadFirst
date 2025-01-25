@@ -2,19 +2,43 @@
 
 public abstract class MenuComponent
 {
-    public abstract void Add(MenuComponent menuComponent);
+    public virtual void Add(MenuComponent menuComponent)
+    {
+        throw new NotSupportedException();
+    }
 
-    public abstract void Remove(MenuComponent menuComponent);
+    public virtual void Remove(MenuComponent menuComponent)
+    {
+        throw new NotSupportedException();
+    }
 
-    public abstract MenuComponent GetChild(int index);
+    public virtual MenuComponent GetChild(int index)
+    {
+        throw new NotSupportedException();
+    }
 
-    public abstract string GetName();
+    public virtual string GetName()
+    {
+        throw new NotSupportedException();
+    }
 
-    public abstract string GetDescription();
+    public virtual string GetDescription()
+    {
+        throw new NotSupportedException();
+    }
 
-    public abstract double GetPrice();
+    public virtual double GetPrice()
+    {
+        throw new NotSupportedException();
+    }
 
-    public abstract bool IsVegetarian();
+    public virtual bool IsVegetarian()
+    {
+        throw new NotSupportedException();
+    }
 
-    public abstract void Print();
+    public virtual void Print()
+    {
+        throw new NotSupportedException();
+    }
 }
