@@ -1,12 +1,4 @@
-﻿using HeadFirst.StatePattern;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.PortableExecutable;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HeadFirst.StatePatternAndDeputyPattern;
+﻿namespace HeadFirst.DeputyPattern;
 
 public class GumballMonitor
 {

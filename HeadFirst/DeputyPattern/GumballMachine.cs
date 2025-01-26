@@ -1,6 +1,6 @@
-﻿using HeadFirst.StatePattern.States;
+﻿using HeadFirst.DeputyPattern.States;
 
-namespace HeadFirst.StatePattern;
+namespace HeadFirst.DeputyPattern;
 
 public class GumballMachine
 {
