@@ -1,6 +1,6 @@
 ﻿namespace HeadFirst.CompositionPatterns;
 
-internal interface IQuackable
+public interface IQuackable
 {
     public void Quack();
 }
