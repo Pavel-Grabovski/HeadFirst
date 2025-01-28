@@ -1,4 +1,6 @@
-﻿namespace HeadFirst.CompositionPatterns;
+﻿using HeadFirst.Strategy.Duck;
+
+namespace HeadFirst.CompositionPatterns;
 
 public class DuckSimulator
 {
@@ -14,11 +16,14 @@ public class DuckSimulator
         IQuackable redheadDuck = new RedheadDuck();
         IQuackable duckCall = new DuckCall();
         IQuackable rubberDuck = new RubberDuck();
+        IQuackable gooseDuck = new GooseAdapter(new Goose());
+
         Console.WriteLine("\nDuck Simulator");
         Simulate(mallardDuck);
         Simulate(redheadDuck);
         Simulate(duckCall);
         Simulate(rubberDuck);
+        Simulate(gooseDuck);
     }
 
     void Simulate(IQuackable duck)
