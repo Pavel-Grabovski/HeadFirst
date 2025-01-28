@@ -5,6 +5,7 @@ using HeadFirst.IteratorAndLinkerPattern;
 using HeadFirst.DeputyPattern;
 using HeadFirst.TemplateMethod;
 using System.Text;
+using HeadFirst.CompositionPatterns;
 
 namespace HeadFirst;
 
@@ -30,8 +31,10 @@ internal class Program
 
         //BeverageTestDrive.Start();
 
-        GumballMachineTestDrive.Start();
+        //GumballMachineTestDrive.Start();
 
         //DinerMenuTestDrive.Start();
+
+        DuckSimulator.Start();
     }
 }
