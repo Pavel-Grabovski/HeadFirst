@@ -38,6 +38,11 @@ public class DuckSimulator
 
         flockOfDucks.Add(flockOfMallards);
 
+
+        Console.WriteLine("\nDuck Simulator: With Observer");
+        Quackologist quackologist = new Quackologist();
+        flockOfDucks.RegisterObserver(quackologist);
+
         Console.WriteLine("\nDuck Simulator: Whole Flock Simulation");
         Simulate(flockOfDucks);
         Console.WriteLine("\nDuck Simulator: Mallard Flock Simulation");

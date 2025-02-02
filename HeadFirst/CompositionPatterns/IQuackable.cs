@@ -1,6 +1,6 @@
 ﻿namespace HeadFirst.CompositionPatterns;
 
-public interface IQuackable
+public interface IQuackable : IQuackObservable
 {
     public void Quack();
 }

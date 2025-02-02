@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HeadFirst.CompositionPatterns;
+﻿namespace HeadFirst.CompositionPatterns;
 
 public class Flock : IQuackable
 {
     List<IQuackable> quackers = new List<IQuackable>();
+    
+    List<IQuackable> _duck = new List<IQuackable>();
 
     public void Add(IQuackable quacker)
     {
         quackers.Add(quacker);
     }
+
+    public void NotifyObservers() { }
 
     public void Quack()
     {
@@ -23,10 +21,15 @@ public class Flock : IQuackable
             IQuackable quacker = iterator.Current;
             quacker.Quack();
         }
+    }
 
-        //foreach(var quacker in quackers)
-        //{
-        //    quacker.Quack();
-        //}
+    public void RegisterObserver(IObserver observer)
+    {
+        IEnumerator<IQuackable> iterator = quackers.GetEnumerator();
+        while (iterator.MoveNext())
+        {
+            IQuackable quacker = iterator.Current;
+            quacker.RegisterObserver(observer);
+        }
     }
 }

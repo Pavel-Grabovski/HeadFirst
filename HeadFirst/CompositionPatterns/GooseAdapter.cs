@@ -2,13 +2,26 @@
 
 public class GooseAdapter : IQuackable
 {
-    Goose goose;
+    private readonly Goose _goose;
+    private readonly Observable _observable;
+
     public GooseAdapter(Goose goose)
     {
-        this.goose = goose;
+        this._goose = goose;
+        _observable = new Observable(this);
     }
     public void Quack()
     {
-        goose.Honk();
+        _goose.Honk();
+    }
+
+    public void NotifyObservers()
+    {
+        _observable.NotifyObservers();
+    }
+
+    public void RegisterObserver(IObserver observer)
+    {
+        _observable.RegisterObserver(observer);
     }
 }

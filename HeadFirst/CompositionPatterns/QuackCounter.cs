@@ -2,21 +2,31 @@
 
 public class QuackCounter : IQuackable
 {
-    IQuackable duck;
-    static int numberOfQuacks;
+    private readonly IQuackable _duck;
+    private static int numberOfQuacks;
 
     public QuackCounter(IQuackable duck)
     {
-        this.duck = duck;
+        _duck = duck;
     }
 
     public void Quack()
     {
-        duck.Quack();
+        _duck.Quack();
         numberOfQuacks++;
     }
     public static int GetQuacks()
     {
         return numberOfQuacks;
+    }
+
+    public void RegisterObserver(IObserver observer)
+    {
+        _duck.RegisterObserver(observer);
+    }
+
+    public void NotifyObservers()
+    {
+        _duck.NotifyObservers();
     }
 }
