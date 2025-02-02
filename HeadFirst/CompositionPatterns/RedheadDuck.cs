@@ -12,6 +12,7 @@ public class RedheadDuck : IQuackable
     public void Quack()
     {
         Console.WriteLine("Quack");
+        NotifyObservers();
     }
 
     public void NotifyObservers()

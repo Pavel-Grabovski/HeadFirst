@@ -13,6 +13,7 @@ public class GooseAdapter : IQuackable
     public void Quack()
     {
         _goose.Honk();
+        NotifyObservers();
     }
 
     public void NotifyObservers()

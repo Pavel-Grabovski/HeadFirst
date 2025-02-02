@@ -15,7 +15,7 @@ public class DuckSimulator
         IQuackable duckCall = duckFactory.CreateDuckCall();
         IQuackable rubberDuck = duckFactory.CreateRubberDuck();
         IQuackable gooseDuck = new GooseAdapter(new Goose());
-        Console.WriteLine("\nDuck Simulator: With Composite — Flocks");
+        //Console.WriteLine("\nDuck Simulator: With Composite — Flocks");
 
         Flock flockOfDucks = new Flock();
         
@@ -45,8 +45,8 @@ public class DuckSimulator
 
         Console.WriteLine("\nDuck Simulator: Whole Flock Simulation");
         Simulate(flockOfDucks);
-        Console.WriteLine("\nDuck Simulator: Mallard Flock Simulation");
-        Simulate(flockOfMallards);
+        //Console.WriteLine("\nDuck Simulator: Mallard Flock Simulation");
+        //Simulate(flockOfMallards);
        
         Console.WriteLine("The ducks quacked " + QuackCounter.GetQuacks() + " times");
     }

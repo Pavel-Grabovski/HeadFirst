@@ -12,6 +12,7 @@ public class RubberDuck : IQuackable
     public void Quack()
     {
         Console.WriteLine("Squeak");
+        NotifyObservers();
     }
 
     public void NotifyObservers()
