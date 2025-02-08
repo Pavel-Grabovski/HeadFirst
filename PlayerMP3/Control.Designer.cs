@@ -28,15 +28,15 @@ partial class Control
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Control));
         SuspendLayout();
         // 
-        // Form1
+        // Control
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        resources.ApplyResources(this, "$this");
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(471, 144);
-        Name = "Form1";
-        Text = "Form1";
+        FormBorderStyle = FormBorderStyle.Fixed3D;
+        Name = "Control";
         ResumeLayout(false);
     }
 
