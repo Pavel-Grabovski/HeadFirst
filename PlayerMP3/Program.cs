@@ -11,6 +11,11 @@ namespace PlayerMP3
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+
+            Windows.View view = new Windows.View();
+            view.Show();
+
+
             Application.Run(new Control());
         }
     }
