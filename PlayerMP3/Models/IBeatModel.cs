@@ -2,6 +2,8 @@
 
 public interface IBeatModel
 {
+    public void Initialize();
+    
     public void On();
     
     public void Off();
