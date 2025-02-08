@@ -1,8 +1,8 @@
 namespace PlayerMP3
 {
-    public partial class Form1 : Form
+    public partial class Control : Form
     {
-        public Form1()
+        public Control()
         {
             InitializeComponent();
         }
