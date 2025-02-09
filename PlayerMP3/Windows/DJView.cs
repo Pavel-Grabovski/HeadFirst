@@ -51,4 +51,23 @@ public partial class DJView : Form, IBeatObserver, IBPMObserver
     {
         startToolStripMenuItem.Enabled = false;
     }
+
+    private void IncreaseButtonClick(object sender, EventArgs e)
+    {
+        _controller.IncreaseBPM();
+    }
+
+    private void DecreaseButtonClick(object sender, EventArgs e)
+    {
+        _controller.DecreaseBPM();
+    }
+
+    private void SetButtonClick(object sender, EventArgs e)
+    {
+        int bpm = 0;
+        bool IsNum = int.TryParse(bpmTextBox.Text, out bpm);
+
+        if(IsNum)
+            _controller.SetBPM(bpm);
+    }
 }

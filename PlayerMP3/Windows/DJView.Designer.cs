@@ -1,4 +1,5 @@
-﻿namespace PlayerMP3;
+﻿
+namespace PlayerMP3;
 
 partial class DJView
 {
@@ -30,7 +31,7 @@ partial class DJView
     {
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DJView));
         label2 = new Label();
-        SoundFrequencyTextBox = new TextBox();
+        bpmTextBox = new TextBox();
         SetButton = new Button();
         DecreaseButton = new Button();
         IncreaseButton = new Button();
@@ -53,28 +54,31 @@ partial class DJView
         resources.ApplyResources(label2, "label2");
         label2.Name = "label2";
         // 
-        // SoundFrequencyTextBox
+        // bpmTextBox
         // 
-        resources.ApplyResources(SoundFrequencyTextBox, "SoundFrequencyTextBox");
-        SoundFrequencyTextBox.Name = "SoundFrequencyTextBox";
+        resources.ApplyResources(bpmTextBox, "bpmTextBox");
+        bpmTextBox.Name = "bpmTextBox";
         // 
         // SetButton
         // 
         resources.ApplyResources(SetButton, "SetButton");
         SetButton.Name = "SetButton";
         SetButton.UseVisualStyleBackColor = true;
+        SetButton.Click += SetButtonClick;
         // 
         // DecreaseButton
         // 
         resources.ApplyResources(DecreaseButton, "DecreaseButton");
         DecreaseButton.Name = "DecreaseButton";
         DecreaseButton.UseVisualStyleBackColor = true;
+        DecreaseButton.Click += DecreaseButtonClick;
         // 
         // IncreaseButton
         // 
         resources.ApplyResources(IncreaseButton, "IncreaseButton");
         IncreaseButton.Name = "IncreaseButton";
         IncreaseButton.UseVisualStyleBackColor = true;
+        IncreaseButton.Click += IncreaseButtonClick;
         // 
         // menuStrip1
         // 
@@ -107,7 +111,7 @@ partial class DJView
         // 
         groupBox1.Controls.Add(label2);
         groupBox1.Controls.Add(IncreaseButton);
-        groupBox1.Controls.Add(SoundFrequencyTextBox);
+        groupBox1.Controls.Add(bpmTextBox);
         groupBox1.Controls.Add(DecreaseButton);
         groupBox1.Controls.Add(SetButton);
         resources.ApplyResources(groupBox1, "groupBox1");
@@ -155,7 +159,7 @@ partial class DJView
 
     #endregion
     private Label label2;
-    private TextBox SoundFrequencyTextBox;
+    private TextBox bpmTextBox;
     private Button SetButton;
     private Button DecreaseButton;
     private Button IncreaseButton;
