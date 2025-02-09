@@ -1,6 +1,6 @@
 ﻿namespace PlayerMP3;
 
-partial class Control
+partial class DJView
 {
     /// <summary>
     ///  Required designer variable.
@@ -28,7 +28,7 @@ partial class Control
     /// </summary>
     private void InitializeComponent()
     {
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Control));
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DJView));
         label2 = new Label();
         SoundFrequencyTextBox = new TextBox();
         SetButton = new Button();

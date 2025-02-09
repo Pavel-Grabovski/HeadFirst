@@ -16,7 +16,7 @@ namespace PlayerMP3
             view.Show();
 
 
-            Application.Run(new Control());
+            Application.Run(new DJView());
         }
     }
 }
