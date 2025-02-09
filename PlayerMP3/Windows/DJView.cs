@@ -14,7 +14,7 @@ public partial class DJView : Form, IBeatObserver, IBPMObserver
         _model = beatModel;
 
         _model.RegisterObserver((IBeatObserver)this);
-        _model.RegisterObserver((IBeatObserver)this);
+        _model.RegisterObserver((IBPMObserver)this);
     }
 
     public void UpdateBPM()

@@ -4,10 +4,10 @@ namespace PlayerMP3.Models;
 
 public class BeatModel : IBeatModel
 {
-    private List<IBeatObserver> beatObserver = new List<IBeatObserver>();
-    private List<IBPMObserver> bpmObservers = new List<IBPMObserver>();
+    private readonly List<IBeatObserver> _beatObserver = new List<IBeatObserver>();
+    private readonly List<IBPMObserver> _bpmObservers = new List<IBPMObserver>();
 
-    int bpm = 90;
+    private int _bpm = 90;
     Thread thread;
 
     bool stop = false;
@@ -24,10 +24,10 @@ public class BeatModel : IBeatModel
     public void On()
     {
         throw new NotImplementedException();
-        //bpm = 90;
-        //NotifyBPMObservers();
+        _bpm = 90;
+        NotifyBPMObservers();
         //thread = new Thread(this);
-        //stop = false;
+        stop = false;
         //thread.start();
     }
 
@@ -39,7 +39,7 @@ public class BeatModel : IBeatModel
 
     public void Run()
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
 
         while (!stop)
         {
@@ -61,37 +61,45 @@ public class BeatModel : IBeatModel
 
     public int GetBPM()
     {
-        return bpm;
+        return _bpm;
     }
 
     public void SetBPM(int bpm)
     {
-        throw new NotImplementedException();
+        _bpm = bpm;
+        NotifyBPMObservers();
     }
 
 
     public void RegisterObserver(IBeatObserver observer)
     {
-        throw new NotImplementedException();
+        _beatObserver.Add(observer);
     }
 
     public void RegisterObserver(IBPMObserver observer)
     {
-        throw new NotImplementedException();
+        _bpmObservers.Remove(observer);
     }
 
     public void RemoveObserver(IBeatObserver observer)
     {
-        throw new NotImplementedException();
+        _beatObserver.Remove(observer);
     }
 
     public void RemoveObserver(IBPMObserver observer)
     {
-        throw new NotImplementedException();
+        _bpmObservers.Remove(observer);
     }
 
     private void NotifyBPMObservers()
     {
-        throw new NotImplementedException();
+        foreach(IBPMObserver observer in _bpmObservers)
+            observer.UpdateBPM();
+    }
+
+    private void NotifyBeatObservers()
+    {
+        foreach (IBeatObserver observer in _beatObserver)
+            observer.UpdateBeat();
     }
 }
