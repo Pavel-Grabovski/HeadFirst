@@ -12,20 +12,27 @@ public class BeatModel : IBeatModel
 
     bool stop = false;
 
+    WaveOutEvent _clip;
+
     public void Initialize()
     {
         try
         {
-            
+            string filePath = @"C:\Users\Home\Music\Paul Mauriat - Pardonne Moi Ce Caprice D'enfant.mp3";
+            var audioFileReader = new Mp3FileReader(filePath);
+
+            _clip = new WaveOutEvent();
+            _clip.Init(audioFileReader);
+            _clip.Play();
         }
         catch { }
     }
 
     public void On()
     {
-        throw new NotImplementedException();
         _bpm = 90;
         NotifyBPMObservers();
+        PlayBeat();
         //thread = new Thread(this);
         stop = false;
         //thread.start();
@@ -33,7 +40,8 @@ public class BeatModel : IBeatModel
 
     public void Off()
     {
-        throw new NotImplementedException();
+        StopBeat();
+        stop = true;
     }
 
 
@@ -43,19 +51,13 @@ public class BeatModel : IBeatModel
 
         while (!stop)
         {
-            string filePath = @"C:\Users\Home\Music\Paul Mauriat - Pardonne Moi Ce Caprice D'enfant.mp3";
-
-            using (var audioFileReader = new Mp3FileReader(filePath))
-            using (var waveOutDevice = new WaveOutEvent())
+            PlayBeat();
+            NotifyBeatObservers();
+            try
             {
-                waveOutDevice.Init(audioFileReader);
-                waveOutDevice.Play();
-
-                Console.WriteLine("Press any key to stop playback...");
-                Console.ReadKey();
-
-                waveOutDevice.Stop();
+                Thread.Sleep(60000 / GetBPM());
             }
+            catch { }
         }
     }
 
@@ -101,5 +103,15 @@ public class BeatModel : IBeatModel
     {
         foreach (IBeatObserver observer in _beatObserver)
             observer.UpdateBeat();
+    }
+
+    private void PlayBeat()
+    {
+        _clip.Play();
+    }
+
+    private void StopBeat()
+    {
+        _clip.Stop();
     }
 }
