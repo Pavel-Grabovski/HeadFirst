@@ -41,9 +41,8 @@ partial class DJView
         quitToolStripMenuItem = new ToolStripMenuItem();
         groupBox1 = new GroupBox();
         groupBox2 = new GroupBox();
-        label1 = new Label();
-        label3 = new Label();
-        progressBar1 = new ProgressBar();
+        bpmOutputLabel = new Label();
+        beatBar = new ProgressBar();
         menuStrip1.SuspendLayout();
         groupBox1.SuspendLayout();
         groupBox2.SuspendLayout();
@@ -117,27 +116,22 @@ partial class DJView
         // 
         // groupBox2
         // 
-        groupBox2.Controls.Add(label1);
-        groupBox2.Controls.Add(label3);
-        groupBox2.Controls.Add(progressBar1);
+        groupBox2.Controls.Add(bpmOutputLabel);
+        groupBox2.Controls.Add(beatBar);
         resources.ApplyResources(groupBox2, "groupBox2");
         groupBox2.Name = "groupBox2";
         groupBox2.TabStop = false;
         // 
-        // label1
+        // bpmOutputLabel
         // 
-        resources.ApplyResources(label1, "label1");
-        label1.Name = "label1";
+        resources.ApplyResources(bpmOutputLabel, "bpmOutputLabel");
+        bpmOutputLabel.Name = "bpmOutputLabel";
         // 
-        // label3
+        // beatBar
         // 
-        resources.ApplyResources(label3, "label3");
-        label3.Name = "label3";
-        // 
-        // progressBar1
-        // 
-        resources.ApplyResources(progressBar1, "progressBar1");
-        progressBar1.Name = "progressBar1";
+        resources.ApplyResources(beatBar, "beatBar");
+        beatBar.Name = "beatBar";
+        beatBar.Value = 100;
         // 
         // DJView
         // 
@@ -173,6 +167,6 @@ partial class DJView
     private GroupBox groupBox1;
     private GroupBox groupBox2;
     private Label label1;
-    private Label label3;
-    private ProgressBar progressBar1;
+    private Label bpmOutputLabel;
+    private ProgressBar beatBar;
 }
