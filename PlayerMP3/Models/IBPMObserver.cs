@@ -2,5 +2,5 @@
 
 public interface IBPMObserver
 {
-
+    public void UpdateBPM();
 }

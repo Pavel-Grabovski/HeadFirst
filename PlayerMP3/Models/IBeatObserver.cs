@@ -2,5 +2,5 @@
 
 public interface IBeatObserver
 {
-
+    public void UpdateBeat();
 }
