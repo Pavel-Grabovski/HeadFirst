@@ -1,4 +1,5 @@
 ﻿
+
 namespace PlayerMP3;
 
 partial class DJView
@@ -96,11 +97,13 @@ partial class DJView
         // 
         startToolStripMenuItem.Name = "startToolStripMenuItem";
         resources.ApplyResources(startToolStripMenuItem, "startToolStripMenuItem");
+        startToolStripMenuItem.Click += this.startToolStripMenuItemClick;
         // 
         // stopToolStripMenuItem
         // 
         stopToolStripMenuItem.Name = "stopToolStripMenuItem";
         resources.ApplyResources(stopToolStripMenuItem, "stopToolStripMenuItem");
+        stopToolStripMenuItem.Click += this.stopToolStripMenuItemClick;
         // 
         // quitToolStripMenuItem
         // 
