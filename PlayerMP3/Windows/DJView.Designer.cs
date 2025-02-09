@@ -39,7 +39,14 @@ partial class DJView
         startToolStripMenuItem = new ToolStripMenuItem();
         stopToolStripMenuItem = new ToolStripMenuItem();
         quitToolStripMenuItem = new ToolStripMenuItem();
+        groupBox1 = new GroupBox();
+        groupBox2 = new GroupBox();
+        label1 = new Label();
+        label3 = new Label();
+        progressBar1 = new ProgressBar();
         menuStrip1.SuspendLayout();
+        groupBox1.SuspendLayout();
+        groupBox2.SuspendLayout();
         SuspendLayout();
         // 
         // label2
@@ -97,21 +104,57 @@ partial class DJView
         quitToolStripMenuItem.Name = "quitToolStripMenuItem";
         resources.ApplyResources(quitToolStripMenuItem, "quitToolStripMenuItem");
         // 
-        // Control
+        // groupBox1
+        // 
+        groupBox1.Controls.Add(label2);
+        groupBox1.Controls.Add(IncreaseButton);
+        groupBox1.Controls.Add(SoundFrequencyTextBox);
+        groupBox1.Controls.Add(DecreaseButton);
+        groupBox1.Controls.Add(SetButton);
+        resources.ApplyResources(groupBox1, "groupBox1");
+        groupBox1.Name = "groupBox1";
+        groupBox1.TabStop = false;
+        // 
+        // groupBox2
+        // 
+        groupBox2.Controls.Add(label1);
+        groupBox2.Controls.Add(label3);
+        groupBox2.Controls.Add(progressBar1);
+        resources.ApplyResources(groupBox2, "groupBox2");
+        groupBox2.Name = "groupBox2";
+        groupBox2.TabStop = false;
+        // 
+        // label1
+        // 
+        resources.ApplyResources(label1, "label1");
+        label1.Name = "label1";
+        // 
+        // label3
+        // 
+        resources.ApplyResources(label3, "label3");
+        label3.Name = "label3";
+        // 
+        // progressBar1
+        // 
+        resources.ApplyResources(progressBar1, "progressBar1");
+        progressBar1.Name = "progressBar1";
+        // 
+        // DJView
         // 
         resources.ApplyResources(this, "$this");
         AutoScaleMode = AutoScaleMode.Font;
-        Controls.Add(IncreaseButton);
-        Controls.Add(DecreaseButton);
-        Controls.Add(SetButton);
-        Controls.Add(SoundFrequencyTextBox);
-        Controls.Add(label2);
+        Controls.Add(groupBox2);
+        Controls.Add(groupBox1);
         Controls.Add(menuStrip1);
         FormBorderStyle = FormBorderStyle.Fixed3D;
         MainMenuStrip = menuStrip1;
-        Name = "Control";
+        Name = "DJView";
         menuStrip1.ResumeLayout(false);
         menuStrip1.PerformLayout();
+        groupBox1.ResumeLayout(false);
+        groupBox1.PerformLayout();
+        groupBox2.ResumeLayout(false);
+        groupBox2.PerformLayout();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -127,4 +170,9 @@ partial class DJView
     private ToolStripMenuItem startToolStripMenuItem;
     private ToolStripMenuItem stopToolStripMenuItem;
     private ToolStripMenuItem quitToolStripMenuItem;
+    private GroupBox groupBox1;
+    private GroupBox groupBox2;
+    private Label label1;
+    private Label label3;
+    private ProgressBar progressBar1;
 }
