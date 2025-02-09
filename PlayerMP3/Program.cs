@@ -1,3 +1,6 @@
+using PlayerMP3.Controllers;
+using PlayerMP3.Models;
+
 namespace PlayerMP3
 {
     internal static class Program
@@ -11,7 +14,11 @@ namespace PlayerMP3
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            //Application.Run(new DJView());
+
+            IBeatModel model = new BeatModel();
+            IController controller = new BeatController(model);
+
+            Application.Run(new DJView(controller, model));
         }
     }
 }
