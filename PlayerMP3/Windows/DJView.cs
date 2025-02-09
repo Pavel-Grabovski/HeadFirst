@@ -32,4 +32,23 @@ public partial class DJView : Form, IBeatObserver, IBPMObserver
         beatBar.Value = 100;
     }
 
+    public void EnableStopMenuItem()
+    {
+        stopToolStripMenuItem.Enabled = true;
+    }
+
+    public void DisableStopMenuItem()
+    {
+        stopToolStripMenuItem.Enabled = false;
+    }
+
+    public void EnableStartMenuItem()
+    {
+        startToolStripMenuItem.Enabled = true;
+    }
+
+    public void DisableStartMenuItem()
+    {
+        startToolStripMenuItem.Enabled = false;
+    }
 }
