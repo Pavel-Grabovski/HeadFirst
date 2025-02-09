@@ -1,6 +1,6 @@
 ﻿namespace PlayerMP3.Models;
 
-public class BeatObserver
+public interface IBeatObserver
 {
 
 }
