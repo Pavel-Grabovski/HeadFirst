@@ -1,4 +1,6 @@
-﻿using NAudio.Wave;
+﻿
+using CSCore.Codecs;
+using WasapiOut = CSCore.SoundOut.WasapiOut;
 
 namespace PlayerMP3.Models;
 
@@ -12,17 +14,18 @@ public class BeatModel : IBeatModel
 
     bool stop = false;
 
-    WaveOutEvent _clip;
+    WasapiOut _clip;
 
     public void Initialize()
     {
         try
         {
             string filePath = @"C:\Users\Home\Music\Paul Mauriat - Pardonne Moi Ce Caprice D'enfant.mp3";
-            var audioFileReader = new Mp3FileReader(filePath);
 
-            _clip = new WaveOutEvent();
-            _clip.Init(audioFileReader);
+            var _audioSource = CodecFactory.Instance.GetCodec(filePath);
+
+            _clip = new WasapiOut();
+            _clip.Initialize(_audioSource);
             _clip.Play();
         }
         catch { }
@@ -69,6 +72,7 @@ public class BeatModel : IBeatModel
     public void SetBPM(int bpm)
     {
         _bpm = bpm;
+        _clip.Volume = (float)_bpm / 100;
         NotifyBPMObservers();
     }
 
@@ -80,7 +84,7 @@ public class BeatModel : IBeatModel
 
     public void RegisterObserver(IBPMObserver observer)
     {
-        _bpmObservers.Remove(observer);
+        _bpmObservers.Add(observer);
     }
 
     public void RemoveObserver(IBeatObserver observer)
