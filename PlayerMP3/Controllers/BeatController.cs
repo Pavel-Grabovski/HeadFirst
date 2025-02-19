@@ -48,4 +48,9 @@ public class BeatController : IController
     {
         _model.SetBPM(bpm);
     }
+
+    public Form GetView()
+    {
+        return _view;
+    }
 }

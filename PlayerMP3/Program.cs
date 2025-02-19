@@ -16,7 +16,7 @@ namespace PlayerMP3
             IBeatModel model = new BeatModel();
             IController controller = new BeatController(model);
 
-            Application.Run(new DJView(controller, model));
+            Application.Run(controller.GetView());
         }
     }
 }

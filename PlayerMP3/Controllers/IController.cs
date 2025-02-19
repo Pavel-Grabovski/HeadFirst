@@ -11,4 +11,6 @@ public interface IController
     public void DecreaseBPM();
 
     public void SetBPM(int bpm);
+
+    public Form GetView();
 }
