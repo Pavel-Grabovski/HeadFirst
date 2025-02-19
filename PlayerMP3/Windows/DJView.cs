@@ -34,7 +34,7 @@ public partial class DJView : Form, IBeatObserver, IBPMObserver
 
     private void stopToolStripMenuItemClick(object sender, EventArgs e)
     {
-       _controller.Stop();
+        _controller.Stop();
     }
 
     private void startToolStripMenuItemClick(object sender, EventArgs e)
@@ -77,7 +77,13 @@ public partial class DJView : Form, IBeatObserver, IBPMObserver
         int bpm = 0;
         bool IsNum = int.TryParse(bpmTextBox.Text, out bpm);
 
-        if(IsNum)
+        if (IsNum)
             _controller.SetBPM(bpm);
+    }
+
+    private void OuitToolStripMenuItemClick(object sender, EventArgs e)
+    {
+        _controller.Stop();
+        Application.Exit();
     }
 }

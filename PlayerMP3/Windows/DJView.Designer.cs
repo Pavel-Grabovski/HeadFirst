@@ -40,7 +40,7 @@ partial class DJView
         dJControlToolStripMenuItem = new ToolStripMenuItem();
         startToolStripMenuItem = new ToolStripMenuItem();
         stopToolStripMenuItem = new ToolStripMenuItem();
-        quitToolStripMenuItem = new ToolStripMenuItem();
+        ouitToolStripMenuItem = new ToolStripMenuItem();
         groupBox1 = new GroupBox();
         groupBox2 = new GroupBox();
         bpmOutputLabel = new Label();
@@ -89,7 +89,7 @@ partial class DJView
         // 
         // dJControlToolStripMenuItem
         // 
-        dJControlToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { startToolStripMenuItem, stopToolStripMenuItem, quitToolStripMenuItem });
+        dJControlToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { startToolStripMenuItem, stopToolStripMenuItem, ouitToolStripMenuItem });
         dJControlToolStripMenuItem.Name = "dJControlToolStripMenuItem";
         resources.ApplyResources(dJControlToolStripMenuItem, "dJControlToolStripMenuItem");
         // 
@@ -97,18 +97,19 @@ partial class DJView
         // 
         startToolStripMenuItem.Name = "startToolStripMenuItem";
         resources.ApplyResources(startToolStripMenuItem, "startToolStripMenuItem");
-        startToolStripMenuItem.Click += this.startToolStripMenuItemClick;
+        startToolStripMenuItem.Click += startToolStripMenuItemClick;
         // 
         // stopToolStripMenuItem
         // 
         stopToolStripMenuItem.Name = "stopToolStripMenuItem";
         resources.ApplyResources(stopToolStripMenuItem, "stopToolStripMenuItem");
-        stopToolStripMenuItem.Click += this.stopToolStripMenuItemClick;
+        stopToolStripMenuItem.Click += stopToolStripMenuItemClick;
         // 
-        // quitToolStripMenuItem
+        // ouitToolStripMenuItem
         // 
-        quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-        resources.ApplyResources(quitToolStripMenuItem, "quitToolStripMenuItem");
+        ouitToolStripMenuItem.Name = "ouitToolStripMenuItem";
+        resources.ApplyResources(ouitToolStripMenuItem, "ouitToolStripMenuItem");
+        ouitToolStripMenuItem.Click += OuitToolStripMenuItemClick;
         // 
         // groupBox1
         // 
@@ -170,7 +171,7 @@ partial class DJView
     private ToolStripMenuItem dJControlToolStripMenuItem;
     private ToolStripMenuItem startToolStripMenuItem;
     private ToolStripMenuItem stopToolStripMenuItem;
-    private ToolStripMenuItem quitToolStripMenuItem;
+    private ToolStripMenuItem ouitToolStripMenuItem;
     private GroupBox groupBox1;
     private GroupBox groupBox2;
     private Label label1;
