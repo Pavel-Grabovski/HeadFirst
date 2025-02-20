@@ -45,9 +45,14 @@ partial class DJView
         groupBox2 = new GroupBox();
         bpmOutputLabel = new Label();
         beatBar = new ProgressBar();
+        groupBox3 = new GroupBox();
+        label1 = new Label();
+        TimerLabel = new Label();
+        LongMusicPlayersProgressBar = new ProgressBar();
         menuStrip1.SuspendLayout();
         groupBox1.SuspendLayout();
         groupBox2.SuspendLayout();
+        groupBox3.SuspendLayout();
         SuspendLayout();
         // 
         // label2
@@ -141,10 +146,35 @@ partial class DJView
         beatBar.Name = "beatBar";
         beatBar.Value = 100;
         // 
+        // groupBox3
+        // 
+        groupBox3.Controls.Add(label1);
+        groupBox3.Controls.Add(TimerLabel);
+        groupBox3.Controls.Add(LongMusicPlayersProgressBar);
+        resources.ApplyResources(groupBox3, "groupBox3");
+        groupBox3.Name = "groupBox3";
+        groupBox3.TabStop = false;
+        // 
+        // label1
+        // 
+        resources.ApplyResources(label1, "label1");
+        label1.Name = "label1";
+        // 
+        // TimerLabel
+        // 
+        resources.ApplyResources(TimerLabel, "TimerLabel");
+        TimerLabel.Name = "TimerLabel";
+        // 
+        // LongMusicPlayersProgressBar
+        // 
+        resources.ApplyResources(LongMusicPlayersProgressBar, "LongMusicPlayersProgressBar");
+        LongMusicPlayersProgressBar.Name = "LongMusicPlayersProgressBar";
+        // 
         // DJView
         // 
         resources.ApplyResources(this, "$this");
         AutoScaleMode = AutoScaleMode.Font;
+        Controls.Add(groupBox3);
         Controls.Add(groupBox2);
         Controls.Add(groupBox1);
         Controls.Add(menuStrip1);
@@ -157,6 +187,8 @@ partial class DJView
         groupBox1.PerformLayout();
         groupBox2.ResumeLayout(false);
         groupBox2.PerformLayout();
+        groupBox3.ResumeLayout(false);
+        groupBox3.PerformLayout();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -177,4 +209,7 @@ partial class DJView
     private Label label1;
     private Label bpmOutputLabel;
     private ProgressBar beatBar;
+    private GroupBox groupBox3;
+    private Label TimerLabel;
+    private ProgressBar LongMusicPlayersProgressBar;
 }
