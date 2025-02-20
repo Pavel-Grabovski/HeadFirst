@@ -47,8 +47,8 @@ partial class DJView
         beatBar = new ProgressBar();
         groupBox3 = new GroupBox();
         label1 = new Label();
-        TimerLabel = new Label();
-        LongMusicPlayersProgressBar = new ProgressBar();
+        _timerLabel = new Label();
+        _longMusicPlayersProgressBar = new ProgressBar();
         menuStrip1.SuspendLayout();
         groupBox1.SuspendLayout();
         groupBox2.SuspendLayout();
@@ -149,8 +149,8 @@ partial class DJView
         // groupBox3
         // 
         groupBox3.Controls.Add(label1);
-        groupBox3.Controls.Add(TimerLabel);
-        groupBox3.Controls.Add(LongMusicPlayersProgressBar);
+        groupBox3.Controls.Add(_timerLabel);
+        groupBox3.Controls.Add(_longMusicPlayersProgressBar);
         resources.ApplyResources(groupBox3, "groupBox3");
         groupBox3.Name = "groupBox3";
         groupBox3.TabStop = false;
@@ -160,15 +160,15 @@ partial class DJView
         resources.ApplyResources(label1, "label1");
         label1.Name = "label1";
         // 
-        // TimerLabel
+        // _timerLabel
         // 
-        resources.ApplyResources(TimerLabel, "TimerLabel");
-        TimerLabel.Name = "TimerLabel";
+        resources.ApplyResources(_timerLabel, "_timerLabel");
+        _timerLabel.Name = "_timerLabel";
         // 
-        // LongMusicPlayersProgressBar
+        // _longMusicPlayersProgressBar
         // 
-        resources.ApplyResources(LongMusicPlayersProgressBar, "LongMusicPlayersProgressBar");
-        LongMusicPlayersProgressBar.Name = "LongMusicPlayersProgressBar";
+        resources.ApplyResources(_longMusicPlayersProgressBar, "_longMusicPlayersProgressBar");
+        _longMusicPlayersProgressBar.Name = "_longMusicPlayersProgressBar";
         // 
         // DJView
         // 
@@ -210,6 +210,6 @@ partial class DJView
     private Label bpmOutputLabel;
     private ProgressBar beatBar;
     private GroupBox groupBox3;
-    private Label TimerLabel;
-    private ProgressBar LongMusicPlayersProgressBar;
+    private Label _timerLabel;
+    private ProgressBar _longMusicPlayersProgressBar;
 }
