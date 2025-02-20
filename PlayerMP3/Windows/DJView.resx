@@ -340,7 +340,7 @@
     <value>1</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 229</value>
+    <value>12, 252</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 84</value>
@@ -420,6 +420,30 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;_longMusicLabel.Name" xml:space="preserve">
+    <value>_longMusicLabel</value>
+  </data>
+  <data name="&gt;&gt;_longMusicLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_longMusicLabel.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;_longMusicLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;_musicNameLabel.Name" xml:space="preserve">
+    <value>_musicNameLabel</value>
+  </data>
+  <data name="&gt;&gt;_musicNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_musicNameLabel.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;_musicNameLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;_timerLabel.Name" xml:space="preserve">
     <value>_timerLabel</value>
   </data>
@@ -430,7 +454,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;_timerLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;_longMusicPlayersProgressBar.Name" xml:space="preserve">
     <value>_longMusicPlayersProgressBar</value>
@@ -442,13 +466,13 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;_longMusicPlayersProgressBar.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 137</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 86</value>
+    <value>200, 109</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -495,6 +519,36 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="_longMusicLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="_longMusicLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="_longMusicLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 78</value>
+  </data>
+  <data name="_longMusicLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 15</value>
+  </data>
+  <data name="_longMusicLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="_longMusicLabel.Text" xml:space="preserve">
+    <value>default</value>
+  </data>
+  <data name="&gt;&gt;_longMusicLabel.Name" xml:space="preserve">
+    <value>_longMusicLabel</value>
+  </data>
+  <data name="&gt;&gt;_longMusicLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_longMusicLabel.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;_longMusicLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="_timerLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -502,7 +556,7 @@
     <value>NoControl</value>
   </data>
   <data name="_timerLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 63</value>
+    <value>6, 78</value>
   </data>
   <data name="_timerLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 15</value>
@@ -523,7 +577,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;_timerLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="_longMusicPlayersProgressBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -547,6 +601,36 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;_longMusicPlayersProgressBar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="_musicNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="_musicNameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="_musicNameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 63</value>
+  </data>
+  <data name="_musicNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 15</value>
+  </data>
+  <data name="_musicNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="_musicNameLabel.Text" xml:space="preserve">
+    <value>default</value>
+  </data>
+  <data name="&gt;&gt;_musicNameLabel.Name" xml:space="preserve">
+    <value>_musicNameLabel</value>
+  </data>
+  <data name="&gt;&gt;_musicNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_musicNameLabel.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;_musicNameLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

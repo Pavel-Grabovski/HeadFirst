@@ -47,8 +47,10 @@ partial class DJView
         beatBar = new ProgressBar();
         groupBox3 = new GroupBox();
         label1 = new Label();
+        _longMusicLabel = new Label();
         _timerLabel = new Label();
         _longMusicPlayersProgressBar = new ProgressBar();
+        _musicNameLabel = new Label();
         menuStrip1.SuspendLayout();
         groupBox1.SuspendLayout();
         groupBox2.SuspendLayout();
@@ -149,6 +151,8 @@ partial class DJView
         // groupBox3
         // 
         groupBox3.Controls.Add(label1);
+        groupBox3.Controls.Add(_longMusicLabel);
+        groupBox3.Controls.Add(_musicNameLabel);
         groupBox3.Controls.Add(_timerLabel);
         groupBox3.Controls.Add(_longMusicPlayersProgressBar);
         resources.ApplyResources(groupBox3, "groupBox3");
@@ -160,6 +164,11 @@ partial class DJView
         resources.ApplyResources(label1, "label1");
         label1.Name = "label1";
         // 
+        // _longMusicLabel
+        // 
+        resources.ApplyResources(_longMusicLabel, "_longMusicLabel");
+        _longMusicLabel.Name = "_longMusicLabel";
+        // 
         // _timerLabel
         // 
         resources.ApplyResources(_timerLabel, "_timerLabel");
@@ -169,6 +178,11 @@ partial class DJView
         // 
         resources.ApplyResources(_longMusicPlayersProgressBar, "_longMusicPlayersProgressBar");
         _longMusicPlayersProgressBar.Name = "_longMusicPlayersProgressBar";
+        // 
+        // _musicNameLabel
+        // 
+        resources.ApplyResources(_musicNameLabel, "_musicNameLabel");
+        _musicNameLabel.Name = "_musicNameLabel";
         // 
         // DJView
         // 
@@ -212,4 +226,6 @@ partial class DJView
     private GroupBox groupBox3;
     private Label _timerLabel;
     private ProgressBar _longMusicPlayersProgressBar;
+    private Label _longMusicLabel;
+    private Label _musicNameLabel;
 }
