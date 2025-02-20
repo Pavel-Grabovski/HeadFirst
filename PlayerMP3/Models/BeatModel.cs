@@ -1,6 +1,17 @@
 ﻿
+using CSCore;
 using CSCore.Codecs;
+using CSCore.SoundOut;
+using NAudio.Wave.SampleProviders;
+
+using NAudio.Wave;
+
+//using NAudio.Wave;
 using WasapiOut = CSCore.SoundOut.WasapiOut;
+using CSCore.MediaFoundation;
+using NAudio.CoreAudioApi;
+using System;
+using PlaybackState = CSCore.SoundOut.PlaybackState;
 
 namespace PlayerMP3.Models;
 
@@ -9,58 +20,62 @@ public class BeatModel : IBeatModel
     private readonly List<IBeatObserver> _beatObserver = new List<IBeatObserver>();
     private readonly List<IBPMObserver> _bpmObservers = new List<IBPMObserver>();
 
+    private readonly List<IMusicInfoObserver> 
+        _musicInfoObservers = new();
+
+    private readonly List<ILongMusicPlayerObserver>
+        _playbackPositionObservers = new();
+
+
+    private WasapiOut _clip;
+    string _filePath = @"C:\Users\Home\Music\Paul Mauriat - Pardonne Moi Ce Caprice D'enfant.mp3";
+
     private int _bpm = 90;
-    Thread thread;
 
     bool stop = false;
 
-    WasapiOut _clip;
+    private MusicInfo? _selectMusicInfo;
 
     public void Initialize()
     {
         try
         {
-            string filePath = @"C:\Users\Home\Music\Paul Mauriat - Pardonne Moi Ce Caprice D'enfant.mp3";
-
-            var _audioSource = CodecFactory.Instance.GetCodec(filePath);
+            IWaveSource _audioSource = CodecFactory.Instance.GetCodec(_filePath);
 
             _clip = new WasapiOut();
             _clip.Initialize(_audioSource);
-            _clip.Play();
+
+            _selectMusicInfo = new MusicInfo()
+            {
+                Name = Path.GetFileName(_filePath),
+                Path = _filePath,
+                PlayingTime = _clip.WaveSource.GetLength()
+            };
+            NotifyMusicInfoObservers();
         }
         catch { }
     }
 
-    public void On()
+    public async Task On()
     {
-        _bpm = 90;
-        NotifyBPMObservers();
-        PlayBeat();
-        //thread = new Thread(this);
         stop = false;
-        //thread.start();
+        await Run();
     }
 
     public void Off()
     {
-        StopBeat();
+        StopMusic();
         stop = true;
     }
 
 
-    public void Run()
+    public async Task Run()
     {
-        //throw new NotImplementedException();
-
-        while (!stop)
+        PlayMusic();
+        while (_clip.PlaybackState == PlaybackState.Playing)
         {
-            PlayBeat();
-            NotifyBeatObservers();
-            try
-            {
-                Thread.Sleep(60000 / GetBPM());
-            }
-            catch { }
+            NotifyPlaybackPositionObservers();
+            await Task.Delay(500);
         }
     }
 
@@ -71,9 +86,9 @@ public class BeatModel : IBeatModel
 
     public void SetBPM(int bpm)
     {
-        _bpm = bpm;
+       _bpm = bpm;
         _clip.Volume = (float)_bpm / 100;
-        NotifyBPMObservers();
+        //NotifyBPMObservers();
     }
 
 
@@ -97,25 +112,68 @@ public class BeatModel : IBeatModel
         _bpmObservers.Remove(observer);
     }
 
-    private void NotifyBPMObservers()
+    public void RegisterObserver(ILongMusicPlayerObserver observer)
     {
-        foreach(IBPMObserver observer in _bpmObservers)
-            observer.UpdateBPM();
+        _playbackPositionObservers.Add(observer);
     }
 
-    private void NotifyBeatObservers()
+    public void RemoveObserver(ILongMusicPlayerObserver observer)
     {
-        foreach (IBeatObserver observer in _beatObserver)
-            observer.UpdateBeat();
+        _playbackPositionObservers.Remove(observer);
     }
 
-    private void PlayBeat()
+    public void RegisterObserver(IMusicInfoObserver observer)
+    {
+        _musicInfoObservers.Add(observer);
+    }
+
+    public void RemoveObserver(IMusicInfoObserver observer)
+    {
+        _musicInfoObservers.Remove(observer);
+    }
+
+    public TimeSpan GetPositionPlayer()
+    {
+        TimeSpan position = _clip.WaveSource.GetPosition();
+        return position;
+    }
+
+
+    //private void NotifyBPMObservers()
+    //{
+    //    foreach(IBPMObserver observer in _bpmObservers)
+    //        observer.UpdateBPM();
+    //}
+
+    //private void NotifyBeatObservers()
+    //{
+    //    foreach (IBeatObserver observer in _beatObserver)
+    //        observer.UpdateBeat();
+    //}
+
+    private void NotifyPlaybackPositionObservers()
+    {
+        foreach (ILongMusicPlayerObserver observer in _playbackPositionObservers)
+            observer.UpdateLongMusicPlayer();
+    }
+
+    private void NotifyMusicInfoObservers()
+    {
+        foreach (IMusicInfoObserver observer in _musicInfoObservers)
+            observer.UpdateMusicInfo();
+    }
+
+
+    private void PlayMusic()
     {
         _clip.Play();
     }
 
-    private void StopBeat()
+    private void StopMusic()
     {
         _clip.Stop();
     }
+
+    public MusicInfo? GetMusicInfo()
+        => _selectMusicInfo;
 }

@@ -3,18 +3,23 @@ using PlayerMP3.Models;
 
 namespace PlayerMP3;
 
-public partial class DJView : Form, IBeatObserver, IBPMObserver
+public partial class DJView : Form, IBeatObserver, IBPMObserver, ILongMusicPlayerObserver, IMusicInfoObserver
 {
     private readonly IController _controller;
     private readonly IBeatModel _model;
+
+    private MusicInfo? _musicInfo;
+
     public DJView(IController controller, IBeatModel beatModel)
     {
         InitializeComponent();
         _controller = controller;
         _model = beatModel;
 
-        _model.RegisterObserver((IBeatObserver)this);
-        _model.RegisterObserver((IBPMObserver)this);
+        //_model.RegisterObserver((IBeatObserver)this);
+        //_model.RegisterObserver((IBPMObserver)this);
+        _model.RegisterObserver((ILongMusicPlayerObserver)this);
+        _model.RegisterObserver((IMusicInfoObserver)this);
     }
 
     public void UpdateBPM()
@@ -30,6 +35,36 @@ public partial class DJView : Form, IBeatObserver, IBPMObserver
     public void UpdateBeat()
     {
         beatBar.Value = 100;
+    }
+
+    public void UpdateLongMusicPlayer()
+    {
+        TimeSpan position = _model.GetPositionPlayer();
+        _positionMusicLabel.Text = $"{position.Minutes}:{position.Seconds}";
+
+        if(_musicInfo != null)
+        {
+            var fff = (position / _musicInfo.PlayingTime);
+            int percent = (int)(position / _musicInfo.PlayingTime * 100);
+
+            _longMusicPlayersProgressBar.Value = percent;
+        }
+    }
+
+    public void UpdateMusicInfo()
+    {
+        _musicInfo = _model.GetMusicInfo();
+
+        if (_musicInfo != null)
+        {
+            _musicNameLabel.Text = _musicInfo.Name;
+            _longMusicLabel.Text = $"{_musicInfo.PlayingTime.Minutes}:{_musicInfo.PlayingTime.Seconds}";
+        }
+        else
+        {
+            _musicNameLabel.Text = "-";
+            _longMusicLabel.Text = "00:00";
+        }
     }
 
     private void stopToolStripMenuItemClick(object sender, EventArgs e)
@@ -71,6 +106,7 @@ public partial class DJView : Form, IBeatObserver, IBPMObserver
     {
         _controller.DecreaseBPM();
     }
+
 
     private void SetButtonClick(object sender, EventArgs e)
     {
