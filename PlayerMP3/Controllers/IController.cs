@@ -6,11 +6,7 @@ public interface IController
     
     public void Stop();
 
-    public void IncreaseBPM();
-    
-    public void DecreaseBPM();
-
-    public void SetBPM(int bpm);
+    public void SetVolume(int volume);
 
     public Form GetView();
 }

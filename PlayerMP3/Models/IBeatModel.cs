@@ -8,7 +8,7 @@ public interface IBeatModel
 
     public void Off();
 
-    public void SetBPM(int bpm);
+    public void SetVolume(int volume);
 
     public int GetBPM();
 

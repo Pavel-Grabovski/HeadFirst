@@ -30,23 +30,9 @@ public class BeatController : IController
         _view.EnableStartMenuItem();
     }
 
-    public void IncreaseBPM()
+    public void SetVolume(int volume)
     {
-        int bpm = _model.GetBPM();
-        _model.SetBPM(bpm++);
-    }
-
-
-    public void DecreaseBPM()
-    {
-        int bpm = _model.GetBPM();
-        _model.SetBPM(bpm--);
-    }
-
-
-    public void SetBPM(int bpm)
-    {
-        _model.SetBPM(bpm);
+        _model.SetVolume(volume);
     }
 
     public Form GetView()
