@@ -80,15 +80,6 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
         startToolStripMenuItem.Enabled = false;
     }
 
-    private void SetButtonClick(object sender, EventArgs e)
-    {
-        int volume = 0;
-        bool IsNum = int.TryParse(bpmTextBox.Text, out volume);
-
-        if (IsNum)
-            _controller.SetVolume(volume);
-    }
-
     private void OuitToolStripMenuItemClick(object sender, EventArgs e)
     {
         _controller.Stop();

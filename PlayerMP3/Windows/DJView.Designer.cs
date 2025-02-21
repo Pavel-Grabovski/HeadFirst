@@ -31,9 +31,6 @@ partial class DJView
     private void InitializeComponent()
     {
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DJView));
-        label2 = new Label();
-        bpmTextBox = new TextBox();
-        SetButton = new Button();
         menuStrip1 = new MenuStrip();
         dJControlToolStripMenuItem = new ToolStripMenuItem();
         startToolStripMenuItem = new ToolStripMenuItem();
@@ -53,23 +50,6 @@ partial class DJView
         ((System.ComponentModel.ISupportInitialize)_volumeTrackBar).BeginInit();
         groupBox3.SuspendLayout();
         SuspendLayout();
-        // 
-        // label2
-        // 
-        resources.ApplyResources(label2, "label2");
-        label2.Name = "label2";
-        // 
-        // bpmTextBox
-        // 
-        resources.ApplyResources(bpmTextBox, "bpmTextBox");
-        bpmTextBox.Name = "bpmTextBox";
-        // 
-        // SetButton
-        // 
-        resources.ApplyResources(SetButton, "SetButton");
-        SetButton.Name = "SetButton";
-        SetButton.UseVisualStyleBackColor = true;
-        SetButton.Click += SetButtonClick;
         // 
         // menuStrip1
         // 
@@ -104,9 +84,6 @@ partial class DJView
         // groupBox1
         // 
         groupBox1.Controls.Add(_volumeTrackBar);
-        groupBox1.Controls.Add(label2);
-        groupBox1.Controls.Add(bpmTextBox);
-        groupBox1.Controls.Add(SetButton);
         resources.ApplyResources(groupBox1, "groupBox1");
         groupBox1.Name = "groupBox1";
         groupBox1.TabStop = false;
@@ -168,7 +145,7 @@ partial class DJView
         Controls.Add(groupBox3);
         Controls.Add(groupBox1);
         Controls.Add(menuStrip1);
-        FormBorderStyle = FormBorderStyle.Fixed3D;
+        FormBorderStyle = FormBorderStyle.None;
         MainMenuStrip = menuStrip1;
         Name = "DJView";
         menuStrip1.ResumeLayout(false);
@@ -183,9 +160,6 @@ partial class DJView
     }
 
     #endregion
-    private Label label2;
-    private TextBox bpmTextBox;
-    private Button SetButton;
     private MenuStrip menuStrip1;
     private ToolStripMenuItem dJControlToolStripMenuItem;
     private ToolStripMenuItem startToolStripMenuItem;
