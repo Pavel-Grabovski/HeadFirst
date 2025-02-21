@@ -2,12 +2,12 @@
 
 namespace PlayerMP3.Controllers;
 
-public class BeatController : IController
+public class PlayerController : IController
 {
     private readonly IBeatModel _model;
     private readonly DJView _view;
 
-    public BeatController(IBeatModel model)
+    public PlayerController(IBeatModel model)
     {
         _model = model;
         _view = new DJView(this, model);
