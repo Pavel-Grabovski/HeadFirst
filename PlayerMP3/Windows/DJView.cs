@@ -36,8 +36,6 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
 
     public void UpdateMusicInfo()
     {
-        _musicInfo = _model.GetMusicInfo();
-
         if (_musicInfo != null)
         {
             _musicNameLabel.Text = _musicInfo.Name;

@@ -13,7 +13,6 @@ public class PlayerController : IController
         _view = new DJView(this, model);
         _view.DisableStopMenuItem();
         _view.EnableStartMenuItem();
-        _model.Initialize();
     }
 
     public void Start()

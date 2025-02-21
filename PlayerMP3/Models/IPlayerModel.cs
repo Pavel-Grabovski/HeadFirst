@@ -2,8 +2,6 @@
 
 public interface IPlayerModel : IDisposable 
 {
-    public void Initialize();
-
     public Task On();
 
     public void Off();

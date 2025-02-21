@@ -24,7 +24,20 @@ public class PlayerModel : IPlayerModel
 
     private MusicInfo? _selectMusicInfo;
 
-    public void Initialize()
+    public async Task On()
+    {
+        stop = false;
+        await Run();
+    }
+
+    public void Off()
+    {
+        StopMusic();
+        stop = true;
+    }
+
+
+    public async Task Run()
     {
         try
         {
@@ -43,23 +56,8 @@ public class PlayerModel : IPlayerModel
             NotifyMusicInfoObservers();
         }
         catch { }
-    }
-
-    public async Task On()
-    {
-        stop = false;
-        await Run();
-    }
-
-    public void Off()
-    {
-        StopMusic();
-        stop = true;
-    }
 
 
-    public async Task Run()
-    {
         PlayMusic();
         while (_clip.PlaybackState == PlaybackState.Playing)
         {
