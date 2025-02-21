@@ -40,6 +40,7 @@ partial class DJView
         stopToolStripMenuItem = new ToolStripMenuItem();
         ouitToolStripMenuItem = new ToolStripMenuItem();
         groupBox1 = new GroupBox();
+        _volumeTrackBar = new TrackBar();
         groupBox3 = new GroupBox();
         label1 = new Label();
         label3 = new Label();
@@ -49,6 +50,7 @@ partial class DJView
         _longMusicPlayersProgressBar = new ProgressBar();
         menuStrip1.SuspendLayout();
         groupBox1.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)_volumeTrackBar).BeginInit();
         groupBox3.SuspendLayout();
         SuspendLayout();
         // 
@@ -101,12 +103,21 @@ partial class DJView
         // 
         // groupBox1
         // 
+        groupBox1.Controls.Add(_volumeTrackBar);
         groupBox1.Controls.Add(label2);
         groupBox1.Controls.Add(bpmTextBox);
         groupBox1.Controls.Add(SetButton);
         resources.ApplyResources(groupBox1, "groupBox1");
         groupBox1.Name = "groupBox1";
         groupBox1.TabStop = false;
+        // 
+        // _volumeTrackBar
+        // 
+        resources.ApplyResources(_volumeTrackBar, "_volumeTrackBar");
+        _volumeTrackBar.Maximum = 20;
+        _volumeTrackBar.Name = "_volumeTrackBar";
+        _volumeTrackBar.Value = 10;
+        _volumeTrackBar.Scroll += VolumeTrackBarScroll;
         // 
         // groupBox3
         // 
@@ -164,6 +175,7 @@ partial class DJView
         menuStrip1.PerformLayout();
         groupBox1.ResumeLayout(false);
         groupBox1.PerformLayout();
+        ((System.ComponentModel.ISupportInitialize)_volumeTrackBar).EndInit();
         groupBox3.ResumeLayout(false);
         groupBox3.PerformLayout();
         ResumeLayout(false);
@@ -187,4 +199,5 @@ partial class DJView
     private Label _longMusicLabel;
     private Label _musicNameLabel;
     private Label label3;
+    private TrackBar _volumeTrackBar;
 }

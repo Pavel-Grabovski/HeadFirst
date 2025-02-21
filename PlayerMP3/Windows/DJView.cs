@@ -25,7 +25,7 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
         TimeSpan position = _model.GetPositionPlayer();
         _positionMusicLabel.Text = $"{position.Minutes}:{position.Seconds}";
 
-        if(_musicInfo != null)
+        if (_musicInfo != null)
         {
             var fff = (position / _musicInfo.PlayingTime);
             int percent = (int)(position / _musicInfo.PlayingTime * 100);
@@ -93,5 +93,10 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
     {
         _controller.Stop();
         Application.Exit();
+    }
+
+    private void VolumeTrackBarScroll(object sender, EventArgs e)
+    {
+        _controller.SetVolume(_volumeTrackBar.Value);
     }
 }
