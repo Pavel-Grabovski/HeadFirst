@@ -3,7 +3,7 @@ using PlayerMP3.Models;
 
 namespace PlayerMP3;
 
-public partial class DJView : Form, IBeatObserver, IBPMObserver, ILongMusicPlayerObserver, IMusicInfoObserver
+public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
 {
     private readonly IController _controller;
     private readonly IBeatModel _model;
@@ -16,25 +16,8 @@ public partial class DJView : Form, IBeatObserver, IBPMObserver, ILongMusicPlaye
         _controller = controller;
         _model = beatModel;
 
-        //_model.RegisterObserver((IBeatObserver)this);
-        //_model.RegisterObserver((IBPMObserver)this);
         _model.RegisterObserver((ILongMusicPlayerObserver)this);
         _model.RegisterObserver((IMusicInfoObserver)this);
-    }
-
-    public void UpdateBPM()
-    {
-        int bpm = _model.GetBPM();
-
-        if (bpm == 0)
-            bpmOutputLabel.Text = "Offline";
-        else
-            bpmOutputLabel.Text = $"Current BPM: {bpm}";
-    }
-
-    public void UpdateBeat()
-    {
-        beatBar.Value = 100;
     }
 
     public void UpdateLongMusicPlayer()
@@ -97,15 +80,6 @@ public partial class DJView : Form, IBeatObserver, IBPMObserver, ILongMusicPlaye
         startToolStripMenuItem.Enabled = false;
     }
 
-    private void IncreaseButtonClick(object sender, EventArgs e)
-    {
-        _controller.IncreaseBPM();
-    }
-
-    private void DecreaseButtonClick(object sender, EventArgs e)
-    {
-        _controller.DecreaseBPM();
-    }
 
 
     private void SetButtonClick(object sender, EventArgs e)

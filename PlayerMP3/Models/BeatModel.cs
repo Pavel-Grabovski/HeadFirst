@@ -1,25 +1,13 @@
 ﻿
 using CSCore;
 using CSCore.Codecs;
-using CSCore.SoundOut;
-using NAudio.Wave.SampleProviders;
-
-using NAudio.Wave;
-
-//using NAudio.Wave;
-using WasapiOut = CSCore.SoundOut.WasapiOut;
-using CSCore.MediaFoundation;
-using NAudio.CoreAudioApi;
-using System;
 using PlaybackState = CSCore.SoundOut.PlaybackState;
+using WasapiOut = CSCore.SoundOut.WasapiOut;
 
 namespace PlayerMP3.Models;
 
 public class BeatModel : IBeatModel
 {
-    private readonly List<IBeatObserver> _beatObserver = new List<IBeatObserver>();
-    private readonly List<IBPMObserver> _bpmObservers = new List<IBPMObserver>();
-
     private readonly List<IMusicInfoObserver> 
         _musicInfoObservers = new();
 
@@ -91,27 +79,6 @@ public class BeatModel : IBeatModel
         //NotifyBPMObservers();
     }
 
-
-    public void RegisterObserver(IBeatObserver observer)
-    {
-        _beatObserver.Add(observer);
-    }
-
-    public void RegisterObserver(IBPMObserver observer)
-    {
-        _bpmObservers.Add(observer);
-    }
-
-    public void RemoveObserver(IBeatObserver observer)
-    {
-        _beatObserver.Remove(observer);
-    }
-
-    public void RemoveObserver(IBPMObserver observer)
-    {
-        _bpmObservers.Remove(observer);
-    }
-
     public void RegisterObserver(ILongMusicPlayerObserver observer)
     {
         _playbackPositionObservers.Add(observer);
@@ -137,19 +104,6 @@ public class BeatModel : IBeatModel
         TimeSpan position = _clip.WaveSource.GetPosition();
         return position;
     }
-
-
-    //private void NotifyBPMObservers()
-    //{
-    //    foreach(IBPMObserver observer in _bpmObservers)
-    //        observer.UpdateBPM();
-    //}
-
-    //private void NotifyBeatObservers()
-    //{
-    //    foreach (IBeatObserver observer in _beatObserver)
-    //        observer.UpdateBeat();
-    //}
 
     private void NotifyPlaybackPositionObservers()
     {

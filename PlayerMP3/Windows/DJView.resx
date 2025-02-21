@@ -165,7 +165,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;bpmTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="SetButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 45</value>
@@ -189,63 +189,35 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;SetButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="DecreaseButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 74</value>
-  </data>
-  <data name="DecreaseButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 23</value>
-  </data>
-  <data name="DecreaseButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="DecreaseButton.Text" xml:space="preserve">
-    <value>&lt;&lt;</value>
-  </data>
-  <data name="&gt;&gt;DecreaseButton.Name" xml:space="preserve">
-    <value>DecreaseButton</value>
-  </data>
-  <data name="&gt;&gt;DecreaseButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DecreaseButton.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;DecreaseButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="IncreaseButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="IncreaseButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 74</value>
-  </data>
-  <data name="IncreaseButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 23</value>
-  </data>
-  <data name="IncreaseButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="IncreaseButton.Text" xml:space="preserve">
-    <value>&gt;&gt;</value>
-  </data>
-  <data name="&gt;&gt;IncreaseButton.Name" xml:space="preserve">
-    <value>IncreaseButton</value>
-  </data>
-  <data name="&gt;&gt;IncreaseButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;IncreaseButton.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;IncreaseButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="startToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 22</value>
+  </data>
+  <data name="startToolStripMenuItem.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="stopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 22</value>
+  </data>
+  <data name="stopToolStripMenuItem.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="ouitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 22</value>
+  </data>
+  <data name="ouitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Quit</value>
+  </data>
+  <data name="dJControlToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 20</value>
+  </data>
+  <data name="dJControlToolStripMenuItem.Text" xml:space="preserve">
+    <value>DJ Control</value>
+  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -268,31 +240,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="dJControlToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 20</value>
-  </data>
-  <data name="dJControlToolStripMenuItem.Text" xml:space="preserve">
-    <value>DJ Control</value>
-  </data>
-  <data name="startToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 22</value>
-  </data>
-  <data name="startToolStripMenuItem.Text" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="stopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 22</value>
-  </data>
-  <data name="stopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Stop</value>
-  </data>
-  <data name="ouitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 22</value>
-  </data>
-  <data name="ouitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Quit</value>
+    <value>2</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 27</value>
@@ -313,197 +261,12 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;bpmOutputLabel.Name" xml:space="preserve">
-    <value>bpmOutputLabel</value>
-  </data>
-  <data name="&gt;&gt;bpmOutputLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bpmOutputLabel.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;bpmOutputLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;beatBar.Name" xml:space="preserve">
-    <value>beatBar</value>
-  </data>
-  <data name="&gt;&gt;beatBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;beatBar.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;beatBar.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 252</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 84</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="bpmOutputLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="bpmOutputLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 48</value>
-  </data>
-  <data name="bpmOutputLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 15</value>
-  </data>
-  <data name="bpmOutputLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="bpmOutputLabel.Text" xml:space="preserve">
-    <value>default</value>
-  </data>
-  <data name="&gt;&gt;bpmOutputLabel.Name" xml:space="preserve">
-    <value>bpmOutputLabel</value>
-  </data>
-  <data name="&gt;&gt;bpmOutputLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bpmOutputLabel.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;bpmOutputLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="beatBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 22</value>
-  </data>
-  <data name="beatBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 23</value>
-  </data>
-  <data name="beatBar.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;beatBar.Name" xml:space="preserve">
-    <value>beatBar</value>
-  </data>
-  <data name="&gt;&gt;beatBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;beatBar.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;beatBar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;_longMusicLabel.Name" xml:space="preserve">
-    <value>_longMusicLabel</value>
-  </data>
-  <data name="&gt;&gt;_longMusicLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_longMusicLabel.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;_longMusicLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;_musicNameLabel.Name" xml:space="preserve">
-    <value>_musicNameLabel</value>
-  </data>
-  <data name="&gt;&gt;_musicNameLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_musicNameLabel.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;_musicNameLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;_positionMusicLabel.Name" xml:space="preserve">
-    <value>_positionMusicLabel</value>
-  </data>
-  <data name="&gt;&gt;_positionMusicLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_positionMusicLabel.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;_positionMusicLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;_longMusicPlayersProgressBar.Name" xml:space="preserve">
-    <value>_longMusicPlayersProgressBar</value>
-  </data>
-  <data name="&gt;&gt;_longMusicPlayersProgressBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_longMusicPlayersProgressBar.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;_longMusicPlayersProgressBar.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 137</value>
-  </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 109</value>
-  </data>
-  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -674,6 +437,27 @@
   </data>
   <data name="&gt;&gt;_longMusicPlayersProgressBar.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 137</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 109</value>
+  </data>
+  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

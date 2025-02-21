@@ -16,14 +16,6 @@ public interface IBeatModel
 
     public MusicInfo? GetMusicInfo();
 
-    public void RegisterObserver(IBeatObserver observer);
-
-    public void RemoveObserver(IBeatObserver observer);
-
-    public void RegisterObserver(IBPMObserver observer);
-
-    public void RemoveObserver(IBPMObserver observer);
-
     public void RegisterObserver(ILongMusicPlayerObserver observer);
 
     public void RemoveObserver(ILongMusicPlayerObserver observer);
