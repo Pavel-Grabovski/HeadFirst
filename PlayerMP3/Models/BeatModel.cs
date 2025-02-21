@@ -68,6 +68,11 @@ public class BeatModel : IBeatModel
         }
     }
 
+    /// <summary>
+    ///  Sets the volume of the playback. Valid values are in the range from 0.0
+    //     (0%) to 1.0 (100%).
+    /// </summary>
+    /// <param name="volume"></param>
     public void SetVolume(float volume)
     {
         _clip.Volume = volume;
