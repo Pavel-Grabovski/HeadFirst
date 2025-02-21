@@ -32,7 +32,8 @@ public class BeatController : IController
 
     public void SetVolume(int volume)
     {
-        _model.SetVolume(volume);
+        float convertedValue = (float)volume / 20;
+        _model.SetVolume(convertedValue);
     }
 
     public Form GetView()

@@ -8,9 +8,7 @@ public interface IBeatModel
 
     public void Off();
 
-    public void SetVolume(int volume);
-
-    public int GetBPM();
+    public void SetVolume(float volume);
 
     public TimeSpan GetPositionPlayer();
 

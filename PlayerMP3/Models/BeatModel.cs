@@ -18,7 +18,7 @@ public class BeatModel : IBeatModel
     private WasapiOut _clip;
     string _filePath = @"C:\Users\Home\Music\Paul Mauriat - Pardonne Moi Ce Caprice D'enfant.mp3";
 
-    private int _volume = 90;
+    private float _volume = 0.5F;
 
     bool stop = false;
 
@@ -32,6 +32,7 @@ public class BeatModel : IBeatModel
 
             _clip = new WasapiOut();
             _clip.Initialize(_audioSource);
+            _clip.Volume = _volume;
 
             _selectMusicInfo = new MusicInfo()
             {
@@ -67,15 +68,9 @@ public class BeatModel : IBeatModel
         }
     }
 
-    public int GetBPM()
+    public void SetVolume(float volume)
     {
-        return _volume;
-    }
-
-    public void SetVolume(int bpm)
-    {
-       _volume = bpm;
-        _clip.Volume = (float)_volume / 100;
+        _clip.Volume = volume;
     }
 
     public void RegisterObserver(ILongMusicPlayerObserver observer)
