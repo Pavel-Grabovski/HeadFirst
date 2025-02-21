@@ -1,5 +1,4 @@
-﻿
-using CSCore;
+﻿using CSCore;
 using CSCore.Codecs;
 using PlaybackState = CSCore.SoundOut.PlaybackState;
 using WasapiOut = CSCore.SoundOut.WasapiOut;
@@ -21,8 +20,6 @@ public class PlayerModel : IPlayerModel
     private float _volume = 0.5F;
 
     bool stop = false;
-
-    private MusicInfo? _selectMusicInfo;
 
     public async Task On()
     {
@@ -47,23 +44,23 @@ public class PlayerModel : IPlayerModel
             _clip.Initialize(_audioSource);
             _clip.Volume = _volume;
 
-            _selectMusicInfo = new MusicInfo()
+            MusicInfo selectMusicInfo = new()
             {
                 Name = Path.GetFileName(_filePath),
                 Path = _filePath,
                 PlayingTime = _clip.WaveSource.GetLength()
             };
-            NotifyMusicInfoObservers();
+            NotifyMusicInfoObservers(selectMusicInfo);
+
+            PlayMusic();
+            while (_clip.PlaybackState == PlaybackState.Playing)
+            {
+                TimeSpan position = _clip.WaveSource.GetPosition();
+                NotifyPlaybackPositionObservers(position);
+                await Task.Delay(1000);
+            }
         }
         catch { }
-
-
-        PlayMusic();
-        while (_clip.PlaybackState == PlaybackState.Playing)
-        {
-            NotifyPlaybackPositionObservers();
-            await Task.Delay(500);
-        }
     }
 
     /// <summary>
@@ -96,22 +93,16 @@ public class PlayerModel : IPlayerModel
         _musicInfoObservers.Remove(observer);
     }
 
-    public TimeSpan GetPositionPlayer()
-    {
-        TimeSpan position = _clip.WaveSource.GetPosition();
-        return position;
-    }
-
-    private void NotifyPlaybackPositionObservers()
+    private void NotifyPlaybackPositionObservers(TimeSpan position)
     {
         foreach (ILongMusicPlayerObserver observer in _playbackPositionObservers)
-            observer.UpdateLongMusicPlayer();
+            observer.UpdateLongMusicPlayer(position);
     }
 
-    private void NotifyMusicInfoObservers()
+    private void NotifyMusicInfoObservers(MusicInfo musicInfo)
     {
         foreach (IMusicInfoObserver observer in _musicInfoObservers)
-            observer.UpdateMusicInfo();
+            observer.UpdateMusicInfo(musicInfo);
     }
 
 
@@ -124,9 +115,6 @@ public class PlayerModel : IPlayerModel
     {
         _clip.Stop();
     }
-
-    public MusicInfo? GetMusicInfo()
-        => _selectMusicInfo;
 
     public void Dispose()
     {

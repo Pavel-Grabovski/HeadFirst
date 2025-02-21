@@ -2,5 +2,5 @@
 
 public interface IMusicInfoObserver
 {
-    public void UpdateMusicInfo();
+    public void UpdateMusicInfo(MusicInfo musicInfo);
 }

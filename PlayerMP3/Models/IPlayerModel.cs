@@ -8,10 +8,6 @@ public interface IPlayerModel : IDisposable
 
     public void SetVolume(float volume);
 
-    public TimeSpan GetPositionPlayer();
-
-    public MusicInfo? GetMusicInfo();
-
     public void RegisterObserver(ILongMusicPlayerObserver observer);
 
     public void RemoveObserver(ILongMusicPlayerObserver observer);

@@ -8,7 +8,12 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
     private readonly IController _controller;
     private readonly IPlayerModel _model;
 
-    private MusicInfo? _musicInfo;
+    private MusicInfo _musicInfo = new()
+    { 
+        Name = string.Empty,
+        Path = string.Empty,
+        PlayingTime = TimeSpan.Zero
+    };
 
     public DJView(IController controller, IPlayerModel beatModel)
     {
@@ -20,32 +25,30 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
         _model.RegisterObserver((IMusicInfoObserver)this);
     }
 
-    public void UpdateLongMusicPlayer()
+    public void UpdateLongMusicPlayer(TimeSpan position)
     {
-        TimeSpan position = _model.GetPositionPlayer();
-        _positionMusicLabel.Text = $"{position.Minutes}:{position.Seconds}";
-
-        if (_musicInfo != null)
+        try
         {
-            var fff = (position / _musicInfo.PlayingTime);
+            _positionMusicLabel.Text = $"{position.Minutes}:{position.Seconds}";
+
             int percent = (int)(position / _musicInfo.PlayingTime * 100);
 
             _longMusicPlayersProgressBar.Value = percent;
         }
+        catch(DivideByZeroException ex) 
+        {
+            MessageBox.Show(ex.Message);
+        }
     }
 
-    public void UpdateMusicInfo()
+    public void UpdateMusicInfo(MusicInfo musicInfo)
     {
-        if (_musicInfo != null)
-        {
-            _musicNameLabel.Text = _musicInfo.Name;
-            _longMusicLabel.Text = $"{_musicInfo.PlayingTime.Minutes}:{_musicInfo.PlayingTime.Seconds}";
-        }
-        else
-        {
-            _musicNameLabel.Text = "-";
-            _longMusicLabel.Text = "00:00";
-        }
+        if (_musicInfo == null) return;
+
+        _musicInfo = musicInfo;
+        _musicNameLabel.Text = musicInfo.Name;
+        _longMusicLabel.Text =
+            $"{musicInfo.PlayingTime.Minutes}:{musicInfo.PlayingTime.Seconds}";
     }
 
     private void stopToolStripMenuItemClick(object sender, EventArgs e)

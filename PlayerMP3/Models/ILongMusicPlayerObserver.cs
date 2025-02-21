@@ -2,5 +2,5 @@
 
 public interface ILongMusicPlayerObserver
 {
-    public void UpdateLongMusicPlayer();
+    public void UpdateLongMusicPlayer(TimeSpan position);
 }
