@@ -6,11 +6,11 @@ namespace PlayerMP3;
 public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
 {
     private readonly IController _controller;
-    private readonly IBeatModel _model;
+    private readonly IPlayerModel _model;
 
     private MusicInfo? _musicInfo;
 
-    public DJView(IController controller, IBeatModel beatModel)
+    public DJView(IController controller, IPlayerModel beatModel)
     {
         InitializeComponent();
         _controller = controller;

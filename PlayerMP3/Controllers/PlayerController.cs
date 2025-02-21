@@ -4,10 +4,10 @@ namespace PlayerMP3.Controllers;
 
 public class PlayerController : IController
 {
-    private readonly IBeatModel _model;
+    private readonly IPlayerModel _model;
     private readonly DJView _view;
 
-    public PlayerController(IBeatModel model)
+    public PlayerController(IPlayerModel model)
     {
         _model = model;
         _view = new DJView(this, model);

@@ -13,7 +13,7 @@ namespace PlayerMP3
         {
             ApplicationConfiguration.Initialize();
 
-            IBeatModel model = new BeatModel();
+            IPlayerModel model = new PlayerModel();
             IController controller = new PlayerController(model);
 
             Application.Run(controller.GetView());

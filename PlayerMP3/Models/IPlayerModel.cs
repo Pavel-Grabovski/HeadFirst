@@ -1,6 +1,6 @@
 ﻿namespace PlayerMP3.Models;
 
-public interface IBeatModel
+public interface IPlayerModel
 {
     public void Initialize();
 

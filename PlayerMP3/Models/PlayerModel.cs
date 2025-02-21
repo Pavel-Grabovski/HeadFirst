@@ -6,7 +6,7 @@ using WasapiOut = CSCore.SoundOut.WasapiOut;
 
 namespace PlayerMP3.Models;
 
-public class BeatModel : IBeatModel
+public class PlayerModel : IPlayerModel
 {
     private readonly List<IMusicInfoObserver> 
         _musicInfoObservers = new();
