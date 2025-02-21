@@ -129,4 +129,9 @@ public class PlayerModel : IPlayerModel
 
     public MusicInfo? GetMusicInfo()
         => _selectMusicInfo;
+
+    public void Dispose()
+    {
+        _clip.Dispose();
+    }
 }

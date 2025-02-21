@@ -83,6 +83,9 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
     private void OuitToolStripMenuItemClick(object sender, EventArgs e)
     {
         _controller.Stop();
+        _controller.Dispose();
+        _model.Dispose();
+        this.Dispose();
         Application.Exit();
     }
 

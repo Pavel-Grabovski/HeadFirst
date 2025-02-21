@@ -1,6 +1,6 @@
 ﻿namespace PlayerMP3.Models;
 
-public interface IPlayerModel
+public interface IPlayerModel : IDisposable 
 {
     public void Initialize();
 

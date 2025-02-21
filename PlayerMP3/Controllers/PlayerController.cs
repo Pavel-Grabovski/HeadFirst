@@ -40,4 +40,10 @@ public class PlayerController : IController
     {
         return _view;
     }
+
+    public void Dispose()
+    {
+        _model?.Dispose();
+        _view?.Dispose();
+    }
 }
