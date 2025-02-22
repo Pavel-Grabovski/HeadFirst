@@ -39,6 +39,7 @@ public class PlayerController : IController
         _view.DisableStopMenuItem();
         _view.EnableStartMenuItem();
         _view.DisablePauseMenuItem();
+        _view.SetSelectDefaultMusicInfo();
     }
 
     public void SetVolume(int volume)

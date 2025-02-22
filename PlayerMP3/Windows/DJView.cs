@@ -8,18 +8,22 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
     private readonly IController _controller;
     private readonly IPlayerModel _model;
 
-    private MusicInfo _musicInfo = new()
+    private readonly MusicInfo _defaultMusicInfo = new()
     {
         Name = string.Empty,
         Path = string.Empty,
         PlayingTime = TimeSpan.Zero
     };
 
+    private MusicInfo _selectMusicInfo;
+
     public DJView(IController controller, IPlayerModel beatModel)
     {
         InitializeComponent();
         _controller = controller;
         _model = beatModel;
+
+        _selectMusicInfo = _defaultMusicInfo;
 
         _model.RegisterObserver((ILongMusicPlayerObserver)this);
         _model.RegisterObserver((IMusicInfoObserver)this);
@@ -31,7 +35,7 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
         {
             _positionMusicLabel.Text = $"{position.Minutes}:{position.Seconds}";
 
-            int percent = (int)(position / _musicInfo.PlayingTime * 100);
+            int percent = (int)(position / _selectMusicInfo.PlayingTime * 100);
 
             _longMusicPlayersProgressBar.Value = percent;
         }
@@ -43,9 +47,9 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
 
     public void UpdateMusicInfo(MusicInfo musicInfo)
     {
-        if (_musicInfo == null) return;
+        if (_selectMusicInfo == null) return;
 
-        _musicInfo = musicInfo;
+        _selectMusicInfo = musicInfo;
         _musicNameLabel.Text = musicInfo.Name;
         _longMusicLabel.Text =
             $"{musicInfo.PlayingTime.Minutes}:{musicInfo.PlayingTime.Seconds}";
@@ -93,6 +97,11 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
     public void DisablePauseMenuItem()
     {
         _pauseToolStripMenuItem.Enabled = false;
+    }
+
+    public void SetSelectDefaultMusicInfo()
+    {
+        _selectMusicInfo = _defaultMusicInfo;
     }
 
     private void ExitToolStripMenuItemClick(object sender, EventArgs e)
