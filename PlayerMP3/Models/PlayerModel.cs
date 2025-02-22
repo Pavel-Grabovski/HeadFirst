@@ -29,7 +29,7 @@ public class PlayerModel : IPlayerModel
 
     public void Off()
     {
-        StopMusic();
+        _clip.Stop();
         stop = true;
     }
 
@@ -52,7 +52,7 @@ public class PlayerModel : IPlayerModel
             };
             NotifyMusicInfoObservers(selectMusicInfo);
 
-            PlayMusic();
+            _clip.Play();
             while (_clip.PlaybackState == PlaybackState.Playing)
             {
                 TimeSpan position = _clip.WaveSource.GetPosition();
@@ -105,16 +105,6 @@ public class PlayerModel : IPlayerModel
             observer.UpdateMusicInfo(musicInfo);
     }
 
-
-    private void PlayMusic()
-    {
-        _clip.Play();
-    }
-
-    private void StopMusic()
-    {
-        _clip.Stop();
-    }
 
     public void Dispose()
     {
