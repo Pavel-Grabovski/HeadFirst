@@ -16,7 +16,7 @@ namespace PlayerMP3
             IPlayerModel model = new PlayerModel();
             IController controller = new PlayerController(model);
 
-            Application.Run(controller.GetView());
+            Application.Run();
         }
     }
 }

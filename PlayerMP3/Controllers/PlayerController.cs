@@ -13,6 +13,7 @@ public class PlayerController : IController
         _view = new DJView(this, model);
         _view.DisableStopMenuItem();
         _view.EnableStartMenuItem();
+        _view.Show();
     }
 
     public void Start()
@@ -33,11 +34,6 @@ public class PlayerController : IController
     {
         float convertedValue = (float)volume / 20;
         _model.SetVolume(convertedValue);
-    }
-
-    public Form GetView()
-    {
-        return _view;
     }
 
     public void Dispose()

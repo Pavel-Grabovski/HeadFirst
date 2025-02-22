@@ -7,6 +7,4 @@ public interface IController : IDisposable
     public void Stop();
 
     public void SetVolume(int volume);
-
-    public Form GetView();
 }
