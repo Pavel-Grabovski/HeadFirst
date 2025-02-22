@@ -9,7 +9,7 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
     private readonly IPlayerModel _model;
 
     private MusicInfo _musicInfo = new()
-    { 
+    {
         Name = string.Empty,
         Path = string.Empty,
         PlayingTime = TimeSpan.Zero
@@ -35,7 +35,7 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
 
             _longMusicPlayersProgressBar.Value = percent;
         }
-        catch(DivideByZeroException ex) 
+        catch (DivideByZeroException ex)
         {
             MessageBox.Show(ex.Message);
         }
@@ -51,37 +51,51 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
             $"{musicInfo.PlayingTime.Minutes}:{musicInfo.PlayingTime.Seconds}";
     }
 
-    private void stopToolStripMenuItemClick(object sender, EventArgs e)
-    {
-        _controller.Stop();
-    }
-
-    private void startToolStripMenuItemClick(object sender, EventArgs e)
+    private void StartToolStripMenuItemClick(object sender, EventArgs e)
     {
         _controller.Start();
     }
 
+    private void PauseToolStripMenuItemClick(object sender, EventArgs e)
+    {
+        _controller.Pause();
+    }
+    private void StopToolStripMenuItemClick(object sender, EventArgs e)
+    {
+        _controller.Stop();
+    }
+
     public void EnableStopMenuItem()
     {
-        stopToolStripMenuItem.Enabled = true;
+        _stopToolStripMenuItem.Enabled = true;
     }
 
     public void DisableStopMenuItem()
     {
-        stopToolStripMenuItem.Enabled = false;
+        _stopToolStripMenuItem.Enabled = false;
     }
 
     public void EnableStartMenuItem()
     {
-        startToolStripMenuItem.Enabled = true;
+        _startToolStripMenuItem.Enabled = true;
     }
 
     public void DisableStartMenuItem()
     {
-        startToolStripMenuItem.Enabled = false;
+        _startToolStripMenuItem.Enabled = false;
     }
 
-    private void OuitToolStripMenuItemClick(object sender, EventArgs e)
+    public void EnablePauseMenuItem()
+    {
+        _pauseToolStripMenuItem.Enabled = true;
+    }
+
+    public void DisablePauseMenuItem()
+    {
+        _pauseToolStripMenuItem.Enabled = false;
+    }
+
+    private void ExitToolStripMenuItemClick(object sender, EventArgs e)
     {
         _controller.Stop();
         _controller.Dispose();
@@ -94,4 +108,5 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
     {
         _controller.SetVolume(_volumeTrackBar.Value);
     }
+
 }

@@ -14,43 +14,47 @@ public class PlayerModel : IPlayerModel
         _playbackPositionObservers = new();
 
 
-    private WasapiOut _clip;
+    private WasapiOut? _clip;
     string _filePath = @"C:\Users\Home\Music\Paul Mauriat - Pardonne Moi Ce Caprice D'enfant.mp3";
 
     private float _volume = 0.5F;
 
-    bool stop = false;
-
     public async Task On()
     {
-        stop = false;
         await Run();
     }
 
     public void Off()
     {
         _clip.Stop();
-        stop = true;
+        //TODO добавить освобождение ресурсов
     }
 
+    public void Pause()
+    {
+        _clip.Pause();
+    }
 
     public async Task Run()
     {
         try
         {
-            IWaveSource _audioSource = CodecFactory.Instance.GetCodec(_filePath);
-
-            _clip = new WasapiOut();
-            _clip.Initialize(_audioSource);
-            _clip.Volume = _volume;
-
-            MusicInfo selectMusicInfo = new()
+            if(_clip is null)
             {
-                Name = Path.GetFileName(_filePath),
-                Path = _filePath,
-                PlayingTime = _clip.WaveSource.GetLength()
-            };
-            NotifyMusicInfoObservers(selectMusicInfo);
+                IWaveSource _audioSource = CodecFactory.Instance.GetCodec(_filePath);
+
+                _clip = new WasapiOut();
+                _clip.Initialize(_audioSource);
+                _clip.Volume = _volume;
+
+                MusicInfo selectMusicInfo = new()
+                {
+                    Name = Path.GetFileName(_filePath),
+                    Path = _filePath,
+                    PlayingTime = _clip.WaveSource.GetLength()
+                };
+                NotifyMusicInfoObservers(selectMusicInfo);
+            }
 
             _clip.Play();
             while (_clip.PlaybackState == PlaybackState.Playing)
@@ -60,7 +64,10 @@ public class PlayerModel : IPlayerModel
                 await Task.Delay(1000);
             }
         }
-        catch { }
+        catch(Exception exception)
+        {
+            MessageBox.Show(exception.Message);
+        }
     }
 
     /// <summary>

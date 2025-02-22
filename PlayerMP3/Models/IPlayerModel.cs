@@ -6,6 +6,8 @@ public interface IPlayerModel : IDisposable
 
     public void Off();
 
+    public void Pause();
+
     public void SetVolume(float volume);
 
     public void RegisterObserver(ILongMusicPlayerObserver observer);

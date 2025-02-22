@@ -6,5 +6,7 @@ public interface IController : IDisposable
     
     public void Stop();
 
+    public void Pause();
+
     public void SetVolume(int volume);
 }

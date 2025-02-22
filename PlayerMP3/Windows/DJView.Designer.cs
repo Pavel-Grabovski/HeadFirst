@@ -33,9 +33,10 @@ partial class DJView
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DJView));
         menuStrip1 = new MenuStrip();
         dJControlToolStripMenuItem = new ToolStripMenuItem();
-        startToolStripMenuItem = new ToolStripMenuItem();
-        stopToolStripMenuItem = new ToolStripMenuItem();
-        ouitToolStripMenuItem = new ToolStripMenuItem();
+        _startToolStripMenuItem = new ToolStripMenuItem();
+        _pauseToolStripMenuItem = new ToolStripMenuItem();
+        _stopToolStripMenuItem = new ToolStripMenuItem();
+        _exitToolStripMenuItem = new ToolStripMenuItem();
         groupBox1 = new GroupBox();
         _volumeTrackBar = new TrackBar();
         groupBox3 = new GroupBox();
@@ -59,27 +60,33 @@ partial class DJView
         // 
         // dJControlToolStripMenuItem
         // 
-        dJControlToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { startToolStripMenuItem, stopToolStripMenuItem, ouitToolStripMenuItem });
+        dJControlToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { _startToolStripMenuItem, _pauseToolStripMenuItem, _stopToolStripMenuItem, _exitToolStripMenuItem });
         dJControlToolStripMenuItem.Name = "dJControlToolStripMenuItem";
         resources.ApplyResources(dJControlToolStripMenuItem, "dJControlToolStripMenuItem");
         // 
-        // startToolStripMenuItem
+        // _startToolStripMenuItem
         // 
-        startToolStripMenuItem.Name = "startToolStripMenuItem";
-        resources.ApplyResources(startToolStripMenuItem, "startToolStripMenuItem");
-        startToolStripMenuItem.Click += startToolStripMenuItemClick;
+        _startToolStripMenuItem.Name = "_startToolStripMenuItem";
+        resources.ApplyResources(_startToolStripMenuItem, "_startToolStripMenuItem");
+        _startToolStripMenuItem.Click += StartToolStripMenuItemClick;
         // 
-        // stopToolStripMenuItem
+        // _pauseToolStripMenuItem
         // 
-        stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-        resources.ApplyResources(stopToolStripMenuItem, "stopToolStripMenuItem");
-        stopToolStripMenuItem.Click += stopToolStripMenuItemClick;
+        _pauseToolStripMenuItem.Name = "_pauseToolStripMenuItem";
+        resources.ApplyResources(_pauseToolStripMenuItem, "_pauseToolStripMenuItem");
+        _pauseToolStripMenuItem.Click += PauseToolStripMenuItemClick;
         // 
-        // ouitToolStripMenuItem
+        // _stopToolStripMenuItem
         // 
-        ouitToolStripMenuItem.Name = "ouitToolStripMenuItem";
-        resources.ApplyResources(ouitToolStripMenuItem, "ouitToolStripMenuItem");
-        ouitToolStripMenuItem.Click += OuitToolStripMenuItemClick;
+        _stopToolStripMenuItem.Name = "_stopToolStripMenuItem";
+        resources.ApplyResources(_stopToolStripMenuItem, "_stopToolStripMenuItem");
+        _stopToolStripMenuItem.Click += StopToolStripMenuItemClick;
+        // 
+        // _exitToolStripMenuItem
+        // 
+        _exitToolStripMenuItem.Name = "_exitToolStripMenuItem";
+        resources.ApplyResources(_exitToolStripMenuItem, "_exitToolStripMenuItem");
+        _exitToolStripMenuItem.Click += ExitToolStripMenuItemClick;
         // 
         // groupBox1
         // 
@@ -162,9 +169,9 @@ partial class DJView
     #endregion
     private MenuStrip menuStrip1;
     private ToolStripMenuItem dJControlToolStripMenuItem;
-    private ToolStripMenuItem startToolStripMenuItem;
-    private ToolStripMenuItem stopToolStripMenuItem;
-    private ToolStripMenuItem ouitToolStripMenuItem;
+    private ToolStripMenuItem _startToolStripMenuItem;
+    private ToolStripMenuItem _stopToolStripMenuItem;
+    private ToolStripMenuItem _exitToolStripMenuItem;
     private GroupBox groupBox1;
     private Label label1;
     private GroupBox groupBox3;
@@ -174,4 +181,5 @@ partial class DJView
     private Label _musicNameLabel;
     private Label label3;
     private TrackBar _volumeTrackBar;
+    private ToolStripMenuItem _pauseToolStripMenuItem;
 }

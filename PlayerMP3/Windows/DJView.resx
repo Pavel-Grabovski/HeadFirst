@@ -121,23 +121,29 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="startToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 22</value>
+  <data name="_startToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
-  <data name="startToolStripMenuItem.Text" xml:space="preserve">
+  <data name="_startToolStripMenuItem.Text" xml:space="preserve">
     <value>Start</value>
   </data>
-  <data name="stopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 22</value>
+  <data name="_pauseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
-  <data name="stopToolStripMenuItem.Text" xml:space="preserve">
+  <data name="_pauseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="_stopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="_stopToolStripMenuItem.Text" xml:space="preserve">
     <value>Stop</value>
   </data>
-  <data name="ouitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 22</value>
+  <data name="_exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
-  <data name="ouitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Quit</value>
+  <data name="_exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exit</value>
   </data>
   <data name="dJControlToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 20</value>
@@ -426,22 +432,28 @@
   <data name="&gt;&gt;dJControlToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;startToolStripMenuItem.Name" xml:space="preserve">
-    <value>startToolStripMenuItem</value>
+  <data name="&gt;&gt;_startToolStripMenuItem.Name" xml:space="preserve">
+    <value>_startToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;startToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;_startToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;stopToolStripMenuItem.Name" xml:space="preserve">
-    <value>stopToolStripMenuItem</value>
+  <data name="&gt;&gt;_pauseToolStripMenuItem.Name" xml:space="preserve">
+    <value>_pauseToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;stopToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;_pauseToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ouitToolStripMenuItem.Name" xml:space="preserve">
-    <value>ouitToolStripMenuItem</value>
+  <data name="&gt;&gt;_stopToolStripMenuItem.Name" xml:space="preserve">
+    <value>_stopToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;ouitToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;_stopToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_exitToolStripMenuItem.Name" xml:space="preserve">
+    <value>_exitToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;_exitToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

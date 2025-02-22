@@ -12,6 +12,7 @@ public class PlayerController : IController
         _model = model;
         _view = new DJView(this, model);
         _view.DisableStopMenuItem();
+        _view.DisablePauseMenuItem();
         _view.EnableStartMenuItem();
         _view.Show();
     }
@@ -21,6 +22,15 @@ public class PlayerController : IController
         _model.On();
         _view.DisableStartMenuItem();
         _view.EnableStopMenuItem();
+        _view.EnablePauseMenuItem();
+    }
+
+    public void Pause()
+    {
+        _model.Pause();
+        _view.DisablePauseMenuItem();
+        _view.EnableStartMenuItem();
+
     }
 
     public void Stop()
@@ -28,6 +38,7 @@ public class PlayerController : IController
         _model.Off();
         _view.DisableStopMenuItem();
         _view.EnableStartMenuItem();
+        _view.DisablePauseMenuItem();
     }
 
     public void SetVolume(int volume)
@@ -41,4 +52,5 @@ public class PlayerController : IController
         _model?.Dispose();
         _view?.Dispose();
     }
+
 }
