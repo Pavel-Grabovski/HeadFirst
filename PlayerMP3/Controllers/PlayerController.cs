@@ -47,11 +47,4 @@ public class PlayerController : IController
         float convertedValue = (float)volume / 20;
         _model.SetVolume(convertedValue);
     }
-
-    public void Dispose()
-    {
-        _model?.Dispose();
-        _view?.Dispose();
-    }
-
 }

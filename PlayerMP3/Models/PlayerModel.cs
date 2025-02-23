@@ -5,7 +5,7 @@ using WasapiOut = CSCore.SoundOut.WasapiOut;
 
 namespace PlayerMP3.Models;
 
-public class PlayerModel : IPlayerModel
+public class PlayerModel : IPlayerModel, IDisposable
 {
     private readonly List<IMusicInfoObserver> 
         _musicInfoObservers = new();
@@ -26,13 +26,13 @@ public class PlayerModel : IPlayerModel
 
     public void Off()
     {
-        _clip.Stop();
-        //TODO добавить освобождение ресурсов
+        _clip?.Stop();
+        Dispose();
     }
 
     public void Pause()
     {
-        _clip.Pause();
+        _clip?.Pause();
     }
 
     public async Task Run()
@@ -57,7 +57,7 @@ public class PlayerModel : IPlayerModel
             }
 
             _clip.Play();
-            while (_clip.PlaybackState == PlaybackState.Playing)
+            while (_clip is not null && _clip.PlaybackState == PlaybackState.Playing)
             {
                 TimeSpan position = _clip.WaveSource.GetPosition();
                 NotifyPlaybackPositionObservers(position);
@@ -115,6 +115,7 @@ public class PlayerModel : IPlayerModel
 
     public void Dispose()
     {
-        _clip.Dispose();
+        _clip?.Dispose();
+        _clip = null;
     }
 }

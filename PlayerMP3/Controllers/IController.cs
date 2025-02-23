@@ -1,6 +1,6 @@
 ﻿namespace PlayerMP3.Controllers;
 
-public interface IController : IDisposable
+public interface IController
 {
     public void Start();
     

@@ -1,6 +1,6 @@
 ﻿namespace PlayerMP3.Models;
 
-public interface IPlayerModel : IDisposable 
+public interface IPlayerModel
 {
     public Task On();
 
