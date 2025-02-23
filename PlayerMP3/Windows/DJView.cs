@@ -102,6 +102,9 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
     public void SetSelectDefaultMusicInfo()
     {
         _selectMusicInfo = _defaultMusicInfo;
+        _longMusicPlayersProgressBar.Value = 0;
+        _longMusicLabel.Text = "00:00";
+        _positionMusicLabel.Text = "00:00";
     }
 
     private void ExitToolStripMenuItemClick(object sender, EventArgs e)
