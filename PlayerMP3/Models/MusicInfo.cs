@@ -2,9 +2,9 @@
 
 public class MusicInfo
 {
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
-    public string Path { get; set; }
+    public required string Path { get; set; }
 
     public TimeSpan PlayingTime { get; set; }
 }
