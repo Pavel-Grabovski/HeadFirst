@@ -1,6 +1,3 @@
-using PlayerMP3.Controllers;
-using PlayerMP3.Models;
-
 namespace PlayerMP3;
 
 public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
@@ -57,7 +54,7 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
 
     private void StartToolStripMenuItemClick(object sender, EventArgs e)
     {
-        var progress = new Progress<TimeSpan>();
+        Progress<TimeSpan> progress = new();
         progress.ProgressChanged += (sender, args) =>
         {
             UpdateLongMusicPlayer(args);

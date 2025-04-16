@@ -35,7 +35,7 @@ public class PlayerModel : IPlayerModel, IDisposable
         _clip?.Pause();
     }
 
-    public async Task Run(IProgress<TimeSpan> progress)
+    public async Task Run(IProgress<TimeSpan>? progress = null)
     {
         try
         {
@@ -62,7 +62,7 @@ public class PlayerModel : IPlayerModel, IDisposable
                 TimeSpan position = _clip.WaveSource.GetPosition();
                 //NotifyPlaybackPositionObservers(position);
 
-                if(progress != default)
+                if(progress != null)
                     progress.Report(position);
 
                 await Task.Delay(1000);

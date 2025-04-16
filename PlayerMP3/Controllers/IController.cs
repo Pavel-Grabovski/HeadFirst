@@ -2,7 +2,7 @@
 
 public interface IController
 {
-    public void Start(IProgress<TimeSpan> progress);
+    public void Start(IProgress<TimeSpan>? progress = null);
     
     public void Stop();
 

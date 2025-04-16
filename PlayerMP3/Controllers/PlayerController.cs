@@ -15,7 +15,7 @@ public class PlayerController : IController
         _view.Show();
     }
 
-    public void Start(IProgress<TimeSpan> progress)
+    public void Start(IProgress<TimeSpan>? progress = null)
     {
         _model.On(progress);
         _view.DisableStartMenuItem();
