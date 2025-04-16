@@ -1,5 +1,4 @@
-﻿using System;
-using CSCore;
+﻿using CSCore;
 using CSCore.Codecs;
 using PlaybackState = CSCore.SoundOut.PlaybackState;
 using WasapiOut = CSCore.SoundOut.WasapiOut;

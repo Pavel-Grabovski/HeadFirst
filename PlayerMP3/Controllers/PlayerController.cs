@@ -1,6 +1,4 @@
-﻿using PlayerMP3.Models;
-
-namespace PlayerMP3.Controllers;
+﻿namespace PlayerMP3.Controllers;
 
 public class PlayerController : IController
 {

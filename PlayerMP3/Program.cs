@@ -1,6 +1,3 @@
-using PlayerMP3.Controllers;
-using PlayerMP3.Models;
-
 namespace PlayerMP3
 {
     internal static class Program
