@@ -1,4 +1,5 @@
-﻿using CSCore;
+﻿using System;
+using CSCore;
 using CSCore.Codecs;
 using PlaybackState = CSCore.SoundOut.PlaybackState;
 using WasapiOut = CSCore.SoundOut.WasapiOut;
@@ -15,13 +16,13 @@ public class PlayerModel : IPlayerModel, IDisposable
 
 
     private WasapiOut? _clip;
-    string _filePath = @"C:\Users\Home\Music\Paul Mauriat - Pardonne Moi Ce Caprice D'enfant.mp3";
+    string _filePath = @"D:\Paul Mauriat - Pardonne Moi Ce Caprice D'enfant.mp3";
 
     private float _volume = 0.5F;
 
-    public async Task On()
+    public async Task On(IProgress<TimeSpan> progress)
     {
-        await Run();
+        await Run(progress);
     }
 
     public void Off()
@@ -35,7 +36,7 @@ public class PlayerModel : IPlayerModel, IDisposable
         _clip?.Pause();
     }
 
-    public async Task Run()
+    public async Task Run(IProgress<TimeSpan> progress)
     {
         try
         {
@@ -60,7 +61,11 @@ public class PlayerModel : IPlayerModel, IDisposable
             while (_clip is not null && _clip.PlaybackState == PlaybackState.Playing)
             {
                 TimeSpan position = _clip.WaveSource.GetPosition();
-                NotifyPlaybackPositionObservers(position);
+                //NotifyPlaybackPositionObservers(position);
+
+                if(progress != default)
+                    progress.Report(position);
+
                 await Task.Delay(1000);
             }
         }
@@ -100,11 +105,11 @@ public class PlayerModel : IPlayerModel, IDisposable
         _musicInfoObservers.Remove(observer);
     }
 
-    private void NotifyPlaybackPositionObservers(TimeSpan position)
-    {
-        foreach (ILongMusicPlayerObserver observer in _playbackPositionObservers)
-            observer.UpdateLongMusicPlayer(position);
-    }
+    //private void NotifyPlaybackPositionObservers(TimeSpan position)
+    //{
+    //    foreach (ILongMusicPlayerObserver observer in _playbackPositionObservers)
+    //        observer.UpdateLongMusicPlayer(position);
+    //}
 
     private void NotifyMusicInfoObservers(MusicInfo musicInfo)
     {

@@ -2,7 +2,7 @@
 
 public interface IPlayerModel
 {
-    public Task On();
+    public Task On(IProgress<TimeSpan> progress);
 
     public void Off();
 

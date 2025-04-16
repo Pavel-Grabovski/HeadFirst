@@ -57,7 +57,13 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
 
     private void StartToolStripMenuItemClick(object sender, EventArgs e)
     {
-        _controller.Start();
+        var progress = new Progress<TimeSpan>();
+        progress.ProgressChanged += (sender, args) =>
+        {
+            UpdateLongMusicPlayer(args);
+        };
+
+        _controller.Start(progress);
     }
 
     private void PauseToolStripMenuItemClick(object sender, EventArgs e)
@@ -118,5 +124,6 @@ public partial class DJView : Form, ILongMusicPlayerObserver, IMusicInfoObserver
     {
         _controller.SetVolume(_volumeTrackBar.Value);
     }
+
 
 }
